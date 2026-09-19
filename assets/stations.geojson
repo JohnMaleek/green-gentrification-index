@@ -1,0 +1,428 @@
+{
+  "type": "FeatureCollection",
+  "name": "greensense_debrecen_stations",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.6337404,
+          47.52324542
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER11",
+        "location": "Pet\u0151fi t\u00e9r",
+        "category": "Emerging Green Zones",
+        "risk_score": 79.3,
+        "risk_band": "High",
+        "pm25": 6.344,
+        "pm25_trend": -0.0418,
+        "bus_stops": 50,
+        "months_to_who5": 1.1,
+        "timeline": "On track",
+        "justice_score": 74.4,
+        "monitored": true,
+        "watch": true,
+        "legacy_industrial": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.83798877,
+          47.55811817
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER12",
+        "location": "Debrecen-Hal\u00e1p H\u00e1rmashegy Erdei Iskola",
+        "category": "Established Clean Areas",
+        "risk_score": 76.4,
+        "risk_band": "High",
+        "pm25": 5.89,
+        "pm25_trend": -0.0399,
+        "bus_stops": 0,
+        "months_to_who5": 0.7,
+        "timeline": "On track",
+        "justice_score": 60.3,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63577625,
+          47.50509508
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER07",
+        "location": "Debrecen, Sz\u00e1vay Gyula street Id\u0151sek otthona",
+        "category": "Challenge Zones",
+        "risk_score": 70.6,
+        "risk_band": "High",
+        "pm25": 6.015,
+        "pm25_trend": -0.0114,
+        "bus_stops": 29,
+        "months_to_who5": 2.9,
+        "timeline": "On track",
+        "justice_score": 42.6,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.58018664,
+          47.59773497
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER18",
+        "location": "Debrecen-J\u00f3zsa, Klastrompart sor, j\u00e1tsz\u00f3t\u00e9r",
+        "category": "Established Clean Areas",
+        "risk_score": 66.5,
+        "risk_band": "High",
+        "pm25": 3.623,
+        "pm25_trend": -0.031,
+        "bus_stops": 21,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 47.3,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.62301311,
+          47.54361985
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER15",
+        "location": "Debrecen, Bem t\u00e9r 18/C, ATOMKI",
+        "category": "Established Clean Areas",
+        "risk_score": 62.2,
+        "risk_band": "High",
+        "pm25": 4.015,
+        "pm25_trend": -0.045,
+        "bus_stops": 51,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 60.0,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.66937425,
+          47.54820104
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER05",
+        "location": "Szab\u00f3 P\u00e1l utca 59",
+        "category": "Challenge Zones",
+        "risk_score": 58.2,
+        "risk_band": "Moderate",
+        "pm25": 5.653,
+        "pm25_trend": -0.0113,
+        "bus_stops": 20,
+        "months_to_who5": 1.9,
+        "timeline": "On track",
+        "justice_score": 33.0,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.61669657,
+          47.54547049
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER09",
+        "location": "S\u00e9takert utca 1-3",
+        "category": "Challenge Zones",
+        "risk_score": 56.2,
+        "risk_band": "Moderate",
+        "pm25": 5.197,
+        "pm25_trend": -0.0224,
+        "bus_stops": 56,
+        "months_to_who5": 0.3,
+        "timeline": "On track",
+        "justice_score": 64.6,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.60358902,
+          47.52506265
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER10",
+        "location": "Angyalf\u00f6ld t\u00e9r 4.",
+        "category": "Challenge Zones",
+        "risk_score": 55.7,
+        "risk_band": "Moderate",
+        "pm25": 6.349,
+        "pm25_trend": 0.003,
+        "bus_stops": 41,
+        "months_to_who5": null,
+        "timeline": "Not on track",
+        "justice_score": 52.7,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.502204,
+          47.577175
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER01",
+        "location": "\u00c9NYG\u00d6, BMW k\u00f6r\u00fat",
+        "category": "Established Clean Areas",
+        "risk_score": 53.7,
+        "risk_band": "Moderate",
+        "pm25": 5.043,
+        "pm25_trend": 0.0041,
+        "bus_stops": 2,
+        "months_to_who5": null,
+        "timeline": "Not on track",
+        "justice_score": 33.0,
+        "monitored": true,
+        "watch": true,
+        "legacy_industrial": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.58860163,
+          47.46442193
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER03",
+        "location": "Szepes, S\u00e1rga d\u0171l\u0151",
+        "category": "Established Clean Areas",
+        "risk_score": 52.0,
+        "risk_band": "Moderate",
+        "pm25": 4.54,
+        "pm25_trend": -0.007,
+        "bus_stops": 5,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 40.9,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63063962,
+          47.44742297
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER14",
+        "location": "Mikep\u00e9rcs, R\u00f3zs\u00e1s utca",
+        "category": "Established Clean Areas",
+        "risk_score": 50.9,
+        "risk_band": "Moderate",
+        "pm25": 4.27,
+        "pm25_trend": -0.0563,
+        "bus_stops": 0,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 46.2,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.59611899,
+          47.55757175
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER13",
+        "location": "Vez\u00e9r \u00fati V\u00edzt\u00e1roz\u00f3",
+        "category": "Challenge Zones",
+        "risk_score": 44.4,
+        "risk_band": "Moderate",
+        "pm25": 5.445,
+        "pm25_trend": -0.0019,
+        "bus_stops": 21,
+        "months_to_who5": 7.8,
+        "timeline": "On track",
+        "justice_score": 39.1,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63297768,
+          47.46163523
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER04",
+        "location": "DG\u00d6 481-47 keresztez\u0151d\u00e9s nyugati sarok",
+        "category": "Established Clean Areas",
+        "risk_score": 36.2,
+        "risk_band": "Moderate",
+        "pm25": 3.886,
+        "pm25_trend": -0.0017,
+        "bus_stops": 2,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 24.9,
+        "monitored": true,
+        "watch": false,
+        "legacy_industrial": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63423132,
+          47.56103507
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER08",
+        "location": "Debrecen, Bencz\u00far Gyula u. 5",
+        "category": "Stable Neighborhoods",
+        "risk_score": 31.5,
+        "risk_band": "Moderate",
+        "pm25": 2.921,
+        "pm25_trend": -0.0388,
+        "bus_stops": 15,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 37.2,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.64505351,
+          47.53312747
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER06",
+        "location": "Kar\u00e1csony Gy\u00f6rgy utcai b\u00f6lcs\u0151de",
+        "category": "Stable Neighborhoods",
+        "risk_score": 19.4,
+        "risk_band": "Low",
+        "pm25": 2.111,
+        "pm25_trend": -0.0749,
+        "bus_stops": 30,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 40.7,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.52888622,
+          47.59067666
+        ]
+      },
+      "properties": {
+        "name": "DEB-KER02",
+        "location": "\u00c9NYG\u00d6, M35 J\u00f3zsa \u00faj csom\u00f3pont",
+        "category": "Stable Neighborhoods",
+        "risk_score": 18.8,
+        "risk_band": "Low",
+        "pm25": 3.359,
+        "pm25_trend": -0.0223,
+        "bus_stops": 2,
+        "months_to_who5": null,
+        "timeline": "Already met",
+        "justice_score": 21.9,
+        "monitored": false,
+        "watch": false,
+        "legacy_industrial": true
+      }
+    }
+  ]
+}

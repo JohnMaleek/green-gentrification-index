@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8b18b3848c060303925c86decc93e266 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <div style="position:fixed;top:30px;right:30px;z-index:1000;background:white;
+            padding:12px 14px;border:1px solid #E5E7EB;border-radius:10px;font-size:13px;
+            line-height:1.9;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-family:Inter, sans-serif;">
+            <b>Restoration opportunity</b><br>
+            <span style="color:#10B981;">&#9679;</span> current habitat good / recovering<br>
+            <span style="color:#F59E0B;">&#9679;</span> moderate habitat quality<br>
+            <span style="color:#EF4444;">&#9679;</span> poor — needs remediation first<br>
+            <i>Marker size = hectares restorable</i>
+        </div>
+        
+    
+            <div class="folium-map" id="map_8b18b3848c060303925c86decc93e266" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8b18b3848c060303925c86decc93e266 = L.map(
+                "map_8b18b3848c060303925c86decc93e266",
+                {
+                    center: [47.53, 21.63],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cf0cd76e48fc5b1037c13fce267e3b6f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cf0cd76e48fc5b1037c13fce267e3b6f.addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+            var circle_marker_f226583b5886e5ae031b26463685907f = L.circleMarker(
+                [47.52324542, 21.6337404],
+                {"bubblingMouseEvents": true, "color": "#F59E0B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F59E0B", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.0, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_e79dfdd80a0b32e79c0bb6ceeae0c66a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec0312a6d44636fe83fb7c02716575fb = $(`<div id="html_ec0312a6d44636fe83fb7c02716575fb" style="width: 100.0%; height: 100.0%;"><b>DEB-KER11 · Petőfi tér</b><br>Restorable habitat: <b>6.3 ha</b><br>Patches flagged for restoration: 3<br>Of which very-high potential: 3.2 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: moderate</div>`)[0];
+                popup_e79dfdd80a0b32e79c0bb6ceeae0c66a.setContent(html_ec0312a6d44636fe83fb7c02716575fb);
+            
+        
+
+        circle_marker_f226583b5886e5ae031b26463685907f.bindPopup(popup_e79dfdd80a0b32e79c0bb6ceeae0c66a)
+        ;
+
+        
+    
+    
+            circle_marker_f226583b5886e5ae031b26463685907f.bindTooltip(
+                `<div>
+                     DEB-KER11 · Petőfi tér — 6.3 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fff6b19374b7ae0d949976b5e0ca0d27 = L.circleMarker(
+                [47.55811817, 21.83798877],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.88888888888889, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_bd930709e7b1cbb34ee6c03f4e4388d4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_71c63b274881cdecc7933075a38b0f90 = $(`<div id="html_71c63b274881cdecc7933075a38b0f90" style="width: 100.0%; height: 100.0%;"><b>DEB-KER12 · Debrecen-Haláp Hármashegy Erdei Iskola</b><br>Restorable habitat: <b>4.9 ha</b><br>Patches flagged for restoration: 2<br>Of which very-high potential: 0.0 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: good+ high</div>`)[0];
+                popup_bd930709e7b1cbb34ee6c03f4e4388d4.setContent(html_71c63b274881cdecc7933075a38b0f90);
+            
+        
+
+        circle_marker_fff6b19374b7ae0d949976b5e0ca0d27.bindPopup(popup_bd930709e7b1cbb34ee6c03f4e4388d4)
+        ;
+
+        
+    
+    
+            circle_marker_fff6b19374b7ae0d949976b5e0ca0d27.bindTooltip(
+                `<div>
+                     DEB-KER12 · Debrecen-Haláp Hármashegy Erdei Iskola — 4.9 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b6ff5a5c0901ba2d532165976c0564b = L.circleMarker(
+                [47.54361985, 21.62301311],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.0, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_27b21b3ff70c4fd0c6d58f15a491f068 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_16d37eec42722a540d528a6730e49768 = $(`<div id="html_16d37eec42722a540d528a6730e49768" style="width: 100.0%; height: 100.0%;"><b>DEB-KER15 · Debrecen, Bem tér 18/C, ATOMKI</b><br>Restorable habitat: <b>6.3 ha</b><br>Patches flagged for restoration: 3<br>Of which very-high potential: 2.9 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: good+ high</div>`)[0];
+                popup_27b21b3ff70c4fd0c6d58f15a491f068.setContent(html_16d37eec42722a540d528a6730e49768);
+            
+        
+
+        circle_marker_6b6ff5a5c0901ba2d532165976c0564b.bindPopup(popup_27b21b3ff70c4fd0c6d58f15a491f068)
+        ;
+
+        
+    
+    
+            circle_marker_6b6ff5a5c0901ba2d532165976c0564b.bindTooltip(
+                `<div>
+                     DEB-KER15 · Debrecen, Bem tér 18/C, ATOMKI — 6.3 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4029ddc88f24130cf1e7c96bab18e90 = L.circleMarker(
+                [47.59773497, 21.58018664],
+                {"bubblingMouseEvents": true, "color": "#F59E0B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F59E0B", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.0, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_f44b88ad198900a43a23db1c43b2a84c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6ee5d66015377e74768b1cc574d75329 = $(`<div id="html_6ee5d66015377e74768b1cc574d75329" style="width: 100.0%; height: 100.0%;"><b>DEB-KER18 · Debrecen-Józsa, Klastrompart sor, játszótér</b><br>Restorable habitat: <b>7.2 ha</b><br>Patches flagged for restoration: 4<br>Of which very-high potential: 2.5 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: moderate</div>`)[0];
+                popup_f44b88ad198900a43a23db1c43b2a84c.setContent(html_6ee5d66015377e74768b1cc574d75329);
+            
+        
+
+        circle_marker_b4029ddc88f24130cf1e7c96bab18e90.bindPopup(popup_f44b88ad198900a43a23db1c43b2a84c)
+        ;
+
+        
+    
+    
+            circle_marker_b4029ddc88f24130cf1e7c96bab18e90.bindTooltip(
+                `<div>
+                     DEB-KER18 · Debrecen-Józsa, Klastrompart sor, játszótér — 7.2 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0e4f3a031d4899af29958fe8bfcaed4 = L.circleMarker(
+                [47.44742297, 21.63063962],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.888888888888886, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_1f3a64ccfc5072e92d65e567d070180e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6bb40dd42e50ba523965463ceb12c2d5 = $(`<div id="html_6bb40dd42e50ba523965463ceb12c2d5" style="width: 100.0%; height: 100.0%;"><b>DEB-KER14 · Mikepércs, Rózsás utca</b><br>Restorable habitat: <b>6.7 ha</b><br>Patches flagged for restoration: 3<br>Of which very-high potential: 0.0 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: good+ high</div>`)[0];
+                popup_1f3a64ccfc5072e92d65e567d070180e.setContent(html_6bb40dd42e50ba523965463ceb12c2d5);
+            
+        
+
+        circle_marker_a0e4f3a031d4899af29958fe8bfcaed4.bindPopup(popup_1f3a64ccfc5072e92d65e567d070180e)
+        ;
+
+        
+    
+    
+            circle_marker_a0e4f3a031d4899af29958fe8bfcaed4.bindTooltip(
+                `<div>
+                     DEB-KER14 · Mikepércs, Rózsás utca — 6.7 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89157d2b56ab3cd0a79489e73d2b2167 = L.circleMarker(
+                [47.50509508, 21.63577625],
+                {"bubblingMouseEvents": true, "color": "#EF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EF4444", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.0, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_6adba102392fdb7fcb520786eff922f0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9c2881891e116cbfd8f6270c65cb6e7d = $(`<div id="html_9c2881891e116cbfd8f6270c65cb6e7d" style="width: 100.0%; height: 100.0%;"><b>DEB-KER07 · Debrecen, Szávay Gyula street Idősek otthona</b><br>Restorable habitat: <b>4.5 ha</b><br>Patches flagged for restoration: 3<br>Of which very-high potential: 2.1 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: poor — needs help</div>`)[0];
+                popup_6adba102392fdb7fcb520786eff922f0.setContent(html_9c2881891e116cbfd8f6270c65cb6e7d);
+            
+        
+
+        circle_marker_89157d2b56ab3cd0a79489e73d2b2167.bindPopup(popup_6adba102392fdb7fcb520786eff922f0)
+        ;
+
+        
+    
+    
+            circle_marker_89157d2b56ab3cd0a79489e73d2b2167.bindTooltip(
+                `<div>
+                     DEB-KER07 · Debrecen, Szávay Gyula street Idősek otthona — 4.5 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ce62623705dd8397f34318c9a09beab = L.circleMarker(
+                [47.46442193, 21.58860163],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.77777777777778, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_7282f974910fd929cf8382e8d78a57ec = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c70db02c15f67c34bc247bbc6832118b = $(`<div id="html_c70db02c15f67c34bc247bbc6832118b" style="width: 100.0%; height: 100.0%;"><b>DEB-KER03 · Szepes, Sárga dűlő</b><br>Restorable habitat: <b>4.4 ha</b><br>Patches flagged for restoration: 2<br>Of which very-high potential: 0.0 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: good+ high</div>`)[0];
+                popup_7282f974910fd929cf8382e8d78a57ec.setContent(html_c70db02c15f67c34bc247bbc6832118b);
+            
+        
+
+        circle_marker_5ce62623705dd8397f34318c9a09beab.bindPopup(popup_7282f974910fd929cf8382e8d78a57ec)
+        ;
+
+        
+    
+    
+            circle_marker_5ce62623705dd8397f34318c9a09beab.bindTooltip(
+                `<div>
+                     DEB-KER03 · Szepes, Sárga dűlő — 4.4 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af33ccae3c4dfc696ba5120ad5b8b5ae = L.circleMarker(
+                [47.54820104, 21.66937425],
+                {"bubblingMouseEvents": true, "color": "#EF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EF4444", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.666666666666664, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_e0e86861a8487c835762a295cd3153ed = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_78ca7afc394164cf5d943eeaa2948a4a = $(`<div id="html_78ca7afc394164cf5d943eeaa2948a4a" style="width: 100.0%; height: 100.0%;"><b>DEB-KER05 · Szabó Pál utca 59</b><br>Restorable habitat: <b>5.7 ha</b><br>Patches flagged for restoration: 4<br>Of which very-high potential: 1.9 ha<br>Industrial wasteland patches: 0<br>Current habitat quality: poor — needs help</div>`)[0];
+                popup_e0e86861a8487c835762a295cd3153ed.setContent(html_78ca7afc394164cf5d943eeaa2948a4a);
+            
+        
+
+        circle_marker_af33ccae3c4dfc696ba5120ad5b8b5ae.bindPopup(popup_e0e86861a8487c835762a295cd3153ed)
+        ;
+
+        
+    
+    
+            circle_marker_af33ccae3c4dfc696ba5120ad5b8b5ae.bindTooltip(
+                `<div>
+                     DEB-KER05 · Szabó Pál utca 59 — 5.7 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27a4f427ce92e71e8edb3c8737e80187 = L.circleMarker(
+                [47.577175, 21.502204],
+                {"bubblingMouseEvents": true, "color": "#F59E0B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F59E0B", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.666666666666668, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_e0647f077aee406918fe8a297650eb2b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5b423ffc057890e1aaa9ab24817037a2 = $(`<div id="html_5b423ffc057890e1aaa9ab24817037a2" style="width: 100.0%; height: 100.0%;"><b>DEB-KER01 · ÉNYGÖ, BMW körút</b><br>Restorable habitat: <b>3.9 ha</b><br>Patches flagged for restoration: 2<br>Of which very-high potential: 1.8 ha<br>Industrial wasteland patches: 1<br>Current habitat quality: moderate</div>`)[0];
+                popup_e0647f077aee406918fe8a297650eb2b.setContent(html_5b423ffc057890e1aaa9ab24817037a2);
+            
+        
+
+        circle_marker_27a4f427ce92e71e8edb3c8737e80187.bindPopup(popup_e0647f077aee406918fe8a297650eb2b)
+        ;
+
+        
+    
+    
+            circle_marker_27a4f427ce92e71e8edb3c8737e80187.bindTooltip(
+                `<div>
+                     DEB-KER01 · ÉNYGÖ, BMW körút — 3.9 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b605da5ea6e689396e83feb51e1e8ecc = L.circleMarker(
+                [47.46163523, 21.63297768],
+                {"bubblingMouseEvents": true, "color": "#EF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EF4444", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.666666666666664, "stroke": true, "weight": 3}
+            ).addTo(map_8b18b3848c060303925c86decc93e266);
+        
+    
+        var popup_db0d7c87fe5b43195e8a4a449204dcec = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7c688e43fd4be2af8990ea90a7fd0898 = $(`<div id="html_7c688e43fd4be2af8990ea90a7fd0898" style="width: 100.0%; height: 100.0%;"><b>DEB-KER04 · DGÖ 481-47 kereszteződés nyugati sarok</b><br>Restorable habitat: <b>5.7 ha</b><br>Patches flagged for restoration: 3<br>Of which very-high potential: 4.2 ha<br>Industrial wasteland patches: 1<br>Current habitat quality: poor — needs help</div>`)[0];
+                popup_db0d7c87fe5b43195e8a4a449204dcec.setContent(html_7c688e43fd4be2af8990ea90a7fd0898);
+            
+        
+
+        circle_marker_b605da5ea6e689396e83feb51e1e8ecc.bindPopup(popup_db0d7c87fe5b43195e8a4a449204dcec)
+        ;
+
+        
+    
+    
+            circle_marker_b605da5ea6e689396e83feb51e1e8ecc.bindTooltip(
+                `<div>
+                     DEB-KER04 · DGÖ 481-47 kereszteződés nyugati sarok — 5.7 ha restorable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

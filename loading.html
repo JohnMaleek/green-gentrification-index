@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GreenSense Debrecen — Civic Environmental Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>html,body{margin:0;padding:0}body{overscroll-behavior:none}::-webkit-scrollbar{display:none}</style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+
+<div class="min-h-screen bg-primary-container text-on-primary flex items-center justify-center p-space-lg">
+  <div class="flex flex-col items-center gap-space-lg max-w-lg text-center">
+    <div class="relative w-28 h-28 flex items-center justify-center">
+      <div class="absolute inset-0 rounded-full border-2 border-secondary/40" style="animation:pulseRing 3.5s ease-in-out infinite"></div>
+      <div class="absolute inset-2 rounded-full border-2 border-secondary/30" style="border-top-color:#10B981;animation:spin 3s linear infinite"></div>
+      <span class="material-symbols-outlined text-[34px] text-secondary-fixed">public</span>
+    </div>
+    <div>
+      <div class="font-headline-xl text-headline-xl font-bold tracking-tight">GreenSense</div>
+      <div class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mt-1">Debrecen · DEIK.AI 2026 · Category B</div>
+    </div>
+    <p class="font-body-md text-body-md text-secondary-fixed/90">Civic environmental intelligence for Debrecen.</p>
+    <div class="w-full h-2 rounded-full bg-on-primary/20 overflow-hidden"><div class="h-full w-2/3 rounded-full bg-secondary shimmer-bar"></div></div>
+    <p class="font-body-sm text-body-sm text-secondary-fixed/80">
+      Connecting 16 Green Sentinel nodes · 10 with validated records · DKV transit network (687 stops) ·
+      measured window May 21 – June 19, 2026.
+    </p>
+    <div class="flex flex-wrap justify-center gap-space-sm pt-space-md">
+      <a href="index.html" class="inline-flex items-center gap-space-xs px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90">Executive overview</a>
+      <a href="risk_map.html" class="inline-flex items-center gap-space-xs px-4 py-2 rounded-lg bg-on-primary/10 text-secondary-fixed border border-on-primary/20 font-label-md text-label-md hover:bg-on-primary/20">Risk map</a>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes pulseRing { 0% { transform: scale(0.96); opacity: 0.8; } 50% { transform: scale(1.04); opacity: 0.3; } 100% { transform: scale(0.96); opacity: 0.8; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.shimmer-bar { background: linear-gradient(90deg, rgba(16,185,129,0.2), rgba(52,211,153,0.9), rgba(16,185,129,0.2)); background-size: 200% 100%; animation: shimmer 2s linear infinite; }
+</style>
+</body></html>

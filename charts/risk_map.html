@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0e3d64d3832c18acd6a9db90087996f8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+</head>
+<body>
+    
+    
+        <div style="position:fixed;top:30px;right:30px;z-index:1000;
+            background:white;padding:12px 14px;border:1px solid #E5E7EB;
+            border-radius:10px;font-size:13px;line-height:1.8;
+            box-shadow:0 2px 8px rgba(0,0,0,0.08);font-family:Inter, 'Segoe UI', sans-serif;">
+        <b style="font-size:14px;">Risk Categories</b><br>
+        <span style='color:#EF4444;'>&#9679;</span> Emerging Green Zones<br><span style='color:#10B981;'>&#9679;</span> Established Clean Areas<br><span style='color:#FBBF24;'>&#9679;</span> Stable Neighborhoods<br><span style='color:#F97316;'>&#9679;</span> Challenge Zones
+        </div>
+        
+    
+            <div class="folium-map" id="map_0e3d64d3832c18acd6a9db90087996f8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0e3d64d3832c18acd6a9db90087996f8 = L.map(
+                "map_0e3d64d3832c18acd6a9db90087996f8",
+                {
+                    center: [47.53, 21.63],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ac7bcb14a60c0a12a62e5fc77047e847 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ac7bcb14a60c0a12a62e5fc77047e847.addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+            var circle_marker_ac383170392a05581f67fedac0fe0d52 = L.circleMarker(
+                [47.52324542, 21.6337404],
+                {"bubblingMouseEvents": true, "color": "#EF4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#EF4444", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.515999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_d94cc4472a93b68b882ff7da8ca2a327 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_383e9549d858bd81e20f0b88338ddb94 = $(`<div id="html_383e9549d858bd81e20f0b88338ddb94" style="width: 100.0%; height: 100.0%;"><b>DEB-KER11 · Petőfi tér</b><br>Risk category: Emerging Green Zones<br><b>Risk Score: 79/100 (High)</b><br>Improvement: 0.896<br>Current PM2.5: 6.3 µg/m³<br>PM2.5 rate: -0.0418 µg/m³/day<br>Bus stops nearby: 50</div>`)[0];
+                popup_d94cc4472a93b68b882ff7da8ca2a327.setContent(html_383e9549d858bd81e20f0b88338ddb94);
+            
+        
+
+        circle_marker_ac383170392a05581f67fedac0fe0d52.bindPopup(popup_d94cc4472a93b68b882ff7da8ca2a327)
+        ;
+
+        
+    
+    
+            circle_marker_ac383170392a05581f67fedac0fe0d52.bindTooltip(
+                `<div>
+                     DEB-KER11 · Petőfi tér — Emerging Green Zones · Risk 79/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f0cff40a7a3da216fce6c25c919f616 = L.circleMarker(
+                [47.55811817, 21.83798877],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.168, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_69222e1df9be140e50f9a9275e5133a6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_aac63beba39538c47cf24d1a7505d1a7 = $(`<div id="html_aac63beba39538c47cf24d1a7505d1a7" style="width: 100.0%; height: 100.0%;"><b>DEB-KER12 · Debrecen-Haláp Hármashegy Erdei Iskola</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 76/100 (High)</b><br>Improvement: 1.013<br>Current PM2.5: 5.9 µg/m³<br>PM2.5 rate: -0.0399 µg/m³/day<br>Bus stops nearby: 0</div>`)[0];
+                popup_69222e1df9be140e50f9a9275e5133a6.setContent(html_aac63beba39538c47cf24d1a7505d1a7);
+            
+        
+
+        circle_marker_9f0cff40a7a3da216fce6c25c919f616.bindPopup(popup_69222e1df9be140e50f9a9275e5133a6)
+        ;
+
+        
+    
+    
+            circle_marker_9f0cff40a7a3da216fce6c25c919f616.bindTooltip(
+                `<div>
+                     DEB-KER12 · Debrecen-Haláp Hármashegy Erdei Iskola — Established Clean Areas · Risk 76/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ecb5b64b52f7aa75cd9e669de1f0243d = L.circleMarker(
+                [47.50509508, 21.63577625],
+                {"bubblingMouseEvents": true, "color": "#F97316", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F97316", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.472, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_51501cde96b119b6b030e1bda62f360b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5e95de016c8213cf1914f70e28faa790 = $(`<div id="html_5e95de016c8213cf1914f70e28faa790" style="width: 100.0%; height: 100.0%;"><b>DEB-KER07 · Debrecen, Szávay Gyula street Idősek otthona</b><br>Risk category: Challenge Zones<br><b>Risk Score: 71/100 (High)</b><br>Improvement: 0.789<br>Current PM2.5: 6.0 µg/m³<br>PM2.5 rate: -0.0114 µg/m³/day<br>Bus stops nearby: 29</div>`)[0];
+                popup_51501cde96b119b6b030e1bda62f360b.setContent(html_5e95de016c8213cf1914f70e28faa790);
+            
+        
+
+        circle_marker_ecb5b64b52f7aa75cd9e669de1f0243d.bindPopup(popup_51501cde96b119b6b030e1bda62f360b)
+        ;
+
+        
+    
+    
+            circle_marker_ecb5b64b52f7aa75cd9e669de1f0243d.bindTooltip(
+                `<div>
+                     DEB-KER07 · Debrecen, Szávay Gyula street Idősek otthona — Challenge Zones · Risk 71/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2f493a02b4c53f26b072fc5f5d774b4 = L.circleMarker(
+                [47.59773497, 21.58018664],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.98, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_5f72fb23e65d1785e459a3d1f3c27f73 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_28a150821344d7c3835150b70e15b25c = $(`<div id="html_28a150821344d7c3835150b70e15b25c" style="width: 100.0%; height: 100.0%;"><b>DEB-KER18 · Debrecen-Józsa, Klastrompart sor, játszótér</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 66/100 (High)</b><br>Improvement: 1.002<br>Current PM2.5: 3.6 µg/m³<br>PM2.5 rate: -0.0310 µg/m³/day<br>Bus stops nearby: 21</div>`)[0];
+                popup_5f72fb23e65d1785e459a3d1f3c27f73.setContent(html_28a150821344d7c3835150b70e15b25c);
+            
+        
+
+        circle_marker_e2f493a02b4c53f26b072fc5f5d774b4.bindPopup(popup_5f72fb23e65d1785e459a3d1f3c27f73)
+        ;
+
+        
+    
+    
+            circle_marker_e2f493a02b4c53f26b072fc5f5d774b4.bindTooltip(
+                `<div>
+                     DEB-KER18 · Debrecen-Józsa, Klastrompart sor, játszótér — Established Clean Areas · Risk 66/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ed428e34953fbad6be7cab003467e38 = L.circleMarker(
+                [47.54361985, 21.62301311],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.464, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_a3e09b51e792c858557aeb9b33d57b8d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4f3f6c989c184fbcb027e865d9519304 = $(`<div id="html_4f3f6c989c184fbcb027e865d9519304" style="width: 100.0%; height: 100.0%;"><b>DEB-KER15 · Debrecen, Bem tér 18/C, ATOMKI</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 62/100 (High)</b><br>Improvement: 0.749<br>Current PM2.5: 4.0 µg/m³<br>PM2.5 rate: -0.0450 µg/m³/day<br>Bus stops nearby: 51</div>`)[0];
+                popup_a3e09b51e792c858557aeb9b33d57b8d.setContent(html_4f3f6c989c184fbcb027e865d9519304);
+            
+        
+
+        circle_marker_5ed428e34953fbad6be7cab003467e38.bindPopup(popup_a3e09b51e792c858557aeb9b33d57b8d)
+        ;
+
+        
+    
+    
+            circle_marker_5ed428e34953fbad6be7cab003467e38.bindTooltip(
+                `<div>
+                     DEB-KER15 · Debrecen, Bem tér 18/C, ATOMKI — Established Clean Areas · Risk 62/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db7564b0666392069e567ccbbb1013a7 = L.circleMarker(
+                [47.54820104, 21.66937425],
+                {"bubblingMouseEvents": true, "color": "#F97316", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F97316", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.984000000000002, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_4ccfe6702beebfa2765a058453e6f73f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_442cf833833a86972bae40d1456fc267 = $(`<div id="html_442cf833833a86972bae40d1456fc267" style="width: 100.0%; height: 100.0%;"><b>DEB-KER05 · Szabó Pál utca 59</b><br>Risk category: Challenge Zones<br><b>Risk Score: 58/100 (Moderate)</b><br>Improvement: 0.695<br>Current PM2.5: 5.7 µg/m³<br>PM2.5 rate: -0.0113 µg/m³/day<br>Bus stops nearby: 20</div>`)[0];
+                popup_4ccfe6702beebfa2765a058453e6f73f.setContent(html_442cf833833a86972bae40d1456fc267);
+            
+        
+
+        circle_marker_db7564b0666392069e567ccbbb1013a7.bindPopup(popup_4ccfe6702beebfa2765a058453e6f73f)
+        ;
+
+        
+    
+    
+            circle_marker_db7564b0666392069e567ccbbb1013a7.bindTooltip(
+                `<div>
+                     DEB-KER05 · Szabó Pál utca 59 — Challenge Zones · Risk 58/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27811729754e798683391fcacb705b97 = L.circleMarker(
+                [47.54547049, 21.61669657],
+                {"bubblingMouseEvents": true, "color": "#F97316", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F97316", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.744, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_fce080dbc9a3ccc387b2f29f2c9b4aac = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c84727dca25d2f994355407671f54a19 = $(`<div id="html_c84727dca25d2f994355407671f54a19" style="width: 100.0%; height: 100.0%;"><b>DEB-KER09 · Sétakert utca 1-3</b><br>Risk category: Challenge Zones<br><b>Risk Score: 56/100 (Moderate)</b><br>Improvement: 0.554<br>Current PM2.5: 5.2 µg/m³<br>PM2.5 rate: -0.0224 µg/m³/day<br>Bus stops nearby: 56</div>`)[0];
+                popup_fce080dbc9a3ccc387b2f29f2c9b4aac.setContent(html_c84727dca25d2f994355407671f54a19);
+            
+        
+
+        circle_marker_27811729754e798683391fcacb705b97.bindPopup(popup_fce080dbc9a3ccc387b2f29f2c9b4aac)
+        ;
+
+        
+    
+    
+            circle_marker_27811729754e798683391fcacb705b97.bindTooltip(
+                `<div>
+                     DEB-KER09 · Sétakert utca 1-3 — Challenge Zones · Risk 56/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c51b3b57398ebcda5edd1e7d0165882 = L.circleMarker(
+                [47.52506265, 21.60358902],
+                {"bubblingMouseEvents": true, "color": "#F97316", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F97316", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.684000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_11b781ef3d19d0dc251cfc5b37f617a2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b7b89675bdcd518858a59adfd99f4b19 = $(`<div id="html_b7b89675bdcd518858a59adfd99f4b19" style="width: 100.0%; height: 100.0%;"><b>DEB-KER10 · Angyalföld tér 4.</b><br>Risk category: Challenge Zones<br><b>Risk Score: 56/100 (Moderate)</b><br>Improvement: 0.495<br>Current PM2.5: 6.3 µg/m³<br>PM2.5 rate: 0.0030 µg/m³/day<br>Bus stops nearby: 41</div>`)[0];
+                popup_11b781ef3d19d0dc251cfc5b37f617a2.setContent(html_b7b89675bdcd518858a59adfd99f4b19);
+            
+        
+
+        circle_marker_3c51b3b57398ebcda5edd1e7d0165882.bindPopup(popup_11b781ef3d19d0dc251cfc5b37f617a2)
+        ;
+
+        
+    
+    
+            circle_marker_3c51b3b57398ebcda5edd1e7d0165882.bindTooltip(
+                `<div>
+                     DEB-KER10 · Angyalföld tér 4. — Challenge Zones · Risk 56/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c18c7d25f8db1c1aafad93c90cbe4dc9 = L.circleMarker(
+                [47.577175, 21.502204],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.444, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_72a2d031ad27d7673ddd9775db7e316b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5a0d258042d32a51683fd2fc66080a02 = $(`<div id="html_5a0d258042d32a51683fd2fc66080a02" style="width: 100.0%; height: 100.0%;"><b>DEB-KER01 · ÉNYGÖ, BMW körút</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 54/100 (Moderate)</b><br>Improvement: 0.820<br>Current PM2.5: 5.0 µg/m³<br>PM2.5 rate: 0.0041 µg/m³/day<br>Bus stops nearby: 2</div>`)[0];
+                popup_72a2d031ad27d7673ddd9775db7e316b.setContent(html_5a0d258042d32a51683fd2fc66080a02);
+            
+        
+
+        circle_marker_c18c7d25f8db1c1aafad93c90cbe4dc9.bindPopup(popup_72a2d031ad27d7673ddd9775db7e316b)
+        ;
+
+        
+    
+    
+            circle_marker_c18c7d25f8db1c1aafad93c90cbe4dc9.bindTooltip(
+                `<div>
+                     DEB-KER01 · ÉNYGÖ, BMW körút — Established Clean Areas · Risk 54/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e468c5427001b2a2e2e8158b3568589e = L.circleMarker(
+                [47.46442193, 21.58860163],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.24, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_6f4cab000d33f4a61baf0ade107c92d7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_055f46a8336d718adc32425803de0017 = $(`<div id="html_055f46a8336d718adc32425803de0017" style="width: 100.0%; height: 100.0%;"><b>DEB-KER03 · Szepes, Sárga dűlő</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 52/100 (Moderate)</b><br>Improvement: 0.818<br>Current PM2.5: 4.5 µg/m³<br>PM2.5 rate: -0.0070 µg/m³/day<br>Bus stops nearby: 5</div>`)[0];
+                popup_6f4cab000d33f4a61baf0ade107c92d7.setContent(html_055f46a8336d718adc32425803de0017);
+            
+        
+
+        circle_marker_e468c5427001b2a2e2e8158b3568589e.bindPopup(popup_6f4cab000d33f4a61baf0ade107c92d7)
+        ;
+
+        
+    
+    
+            circle_marker_e468c5427001b2a2e2e8158b3568589e.bindTooltip(
+                `<div>
+                     DEB-KER03 · Szepes, Sárga dűlő — Established Clean Areas · Risk 52/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c04c255f279432352eba64df94f9a124 = L.circleMarker(
+                [47.44742297, 21.63063962],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.108, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_0581b9cdb8f03f1a032d55d400fbe506 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_85ef89cf39db1fce5d550ffc5d541c83 = $(`<div id="html_85ef89cf39db1fce5d550ffc5d541c83" style="width: 100.0%; height: 100.0%;"><b>DEB-KER14 · Mikepércs, Rózsás utca</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 51/100 (Moderate)</b><br>Improvement: 0.847<br>Current PM2.5: 4.3 µg/m³<br>PM2.5 rate: -0.0563 µg/m³/day<br>Bus stops nearby: 0</div>`)[0];
+                popup_0581b9cdb8f03f1a032d55d400fbe506.setContent(html_85ef89cf39db1fce5d550ffc5d541c83);
+            
+        
+
+        circle_marker_c04c255f279432352eba64df94f9a124.bindPopup(popup_0581b9cdb8f03f1a032d55d400fbe506)
+        ;
+
+        
+    
+    
+            circle_marker_c04c255f279432352eba64df94f9a124.bindTooltip(
+                `<div>
+                     DEB-KER14 · Mikepércs, Rózsás utca — Established Clean Areas · Risk 51/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1f85a4e5b158e3190b6dc4cad739c10 = L.circleMarker(
+                [47.55757175, 21.59611899],
+                {"bubblingMouseEvents": true, "color": "#F97316", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F97316", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.328, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_312b3f119a276fa586a2da4255c1698a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6f633ec8c3a2811ad96744ab2a422edf = $(`<div id="html_6f633ec8c3a2811ad96744ab2a422edf" style="width: 100.0%; height: 100.0%;"><b>DEB-KER13 · Vezér úti Víztározó</b><br>Risk category: Challenge Zones<br><b>Risk Score: 44/100 (Moderate)</b><br>Improvement: 0.523<br>Current PM2.5: 5.4 µg/m³<br>PM2.5 rate: -0.0019 µg/m³/day<br>Bus stops nearby: 21</div>`)[0];
+                popup_312b3f119a276fa586a2da4255c1698a.setContent(html_6f633ec8c3a2811ad96744ab2a422edf);
+            
+        
+
+        circle_marker_a1f85a4e5b158e3190b6dc4cad739c10.bindPopup(popup_312b3f119a276fa586a2da4255c1698a)
+        ;
+
+        
+    
+    
+            circle_marker_a1f85a4e5b158e3190b6dc4cad739c10.bindTooltip(
+                `<div>
+                     DEB-KER13 · Vezér úti Víztározó — Challenge Zones · Risk 44/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0896c0035b8ef6ed77bd603cb50e7879 = L.circleMarker(
+                [47.46163523, 21.63297768],
+                {"bubblingMouseEvents": true, "color": "#10B981", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.344000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_c0322a0e889a701f5041b41753e904b8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_210033120684ed70d6b7e70e01d3823d = $(`<div id="html_210033120684ed70d6b7e70e01d3823d" style="width: 100.0%; height: 100.0%;"><b>DEB-KER04 · DGÖ 481-47 kereszteződés nyugati sarok</b><br>Risk category: Established Clean Areas<br><b>Risk Score: 36/100 (Moderate)</b><br>Improvement: 0.676<br>Current PM2.5: 3.9 µg/m³<br>PM2.5 rate: -0.0017 µg/m³/day<br>Bus stops nearby: 2</div>`)[0];
+                popup_c0322a0e889a701f5041b41753e904b8.setContent(html_210033120684ed70d6b7e70e01d3823d);
+            
+        
+
+        circle_marker_0896c0035b8ef6ed77bd603cb50e7879.bindPopup(popup_c0322a0e889a701f5041b41753e904b8)
+        ;
+
+        
+    
+    
+            circle_marker_0896c0035b8ef6ed77bd603cb50e7879.bindTooltip(
+                `<div>
+                     DEB-KER04 · DGÖ 481-47 kereszteződés nyugati sarok — Established Clean Areas · Risk 36/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2fcb0b2aaa63faad14b21c8ce85192ed = L.circleMarker(
+                [47.56103507, 21.63423132],
+                {"bubblingMouseEvents": true, "color": "#FBBF24", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FBBF24", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.780000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_881303a9a049ce03be365d1d9bb635e6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_98b97f6e57200aa7552bb7d203d5d95f = $(`<div id="html_98b97f6e57200aa7552bb7d203d5d95f" style="width: 100.0%; height: 100.0%;"><b>DEB-KER08 · Debrecen, Benczúr Gyula u. 5</b><br>Risk category: Stable Neighborhoods<br><b>Risk Score: 32/100 (Moderate)</b><br>Improvement: 0.609<br>Current PM2.5: 2.9 µg/m³<br>PM2.5 rate: -0.0388 µg/m³/day<br>Bus stops nearby: 15</div>`)[0];
+                popup_881303a9a049ce03be365d1d9bb635e6.setContent(html_98b97f6e57200aa7552bb7d203d5d95f);
+            
+        
+
+        circle_marker_2fcb0b2aaa63faad14b21c8ce85192ed.bindPopup(popup_881303a9a049ce03be365d1d9bb635e6)
+        ;
+
+        
+    
+    
+            circle_marker_2fcb0b2aaa63faad14b21c8ce85192ed.bindTooltip(
+                `<div>
+                     DEB-KER08 · Debrecen, Benczúr Gyula u. 5 — Stable Neighborhoods · Risk 32/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_942c1177f7fdca82d399757a36a1f43a = L.circleMarker(
+                [47.53312747, 21.64505351],
+                {"bubblingMouseEvents": true, "color": "#FBBF24", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FBBF24", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.328, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_888cfbb47394d0dd680a176abacb512a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_51ac173cb08e63f0eb6a65b876a55d36 = $(`<div id="html_51ac173cb08e63f0eb6a65b876a55d36" style="width: 100.0%; height: 100.0%;"><b>DEB-KER06 · Karácsony György utcai bölcsőde</b><br>Risk category: Stable Neighborhoods<br><b>Risk Score: 19/100 (Low)</b><br>Improvement: 0.468<br>Current PM2.5: 2.1 µg/m³<br>PM2.5 rate: -0.0749 µg/m³/day<br>Bus stops nearby: 30</div>`)[0];
+                popup_888cfbb47394d0dd680a176abacb512a.setContent(html_51ac173cb08e63f0eb6a65b876a55d36);
+            
+        
+
+        circle_marker_942c1177f7fdca82d399757a36a1f43a.bindPopup(popup_888cfbb47394d0dd680a176abacb512a)
+        ;
+
+        
+    
+    
+            circle_marker_942c1177f7fdca82d399757a36a1f43a.bindTooltip(
+                `<div>
+                     DEB-KER06 · Karácsony György utcai bölcsőde — Stable Neighborhoods · Risk 19/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1e61c2611bb8fb05c01c10ef8fb2e6d = L.circleMarker(
+                [47.59067666, 21.52888622],
+                {"bubblingMouseEvents": true, "color": "#FBBF24", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FBBF24", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.256, "stroke": true, "weight": 3}
+            ).addTo(map_0e3d64d3832c18acd6a9db90087996f8);
+        
+    
+        var popup_82094d60a14534b38761fc3e75f10926 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_089cbe4e0d5f8ecc89cb3f6d4921ef30 = $(`<div id="html_089cbe4e0d5f8ecc89cb3f6d4921ef30" style="width: 100.0%; height: 100.0%;"><b>DEB-KER02 · ÉNYGÖ, M35 Józsa új csomópont</b><br>Risk category: Stable Neighborhoods<br><b>Risk Score: 19/100 (Low)</b><br>Improvement: 0.486<br>Current PM2.5: 3.4 µg/m³<br>PM2.5 rate: -0.0223 µg/m³/day<br>Bus stops nearby: 2</div>`)[0];
+                popup_82094d60a14534b38761fc3e75f10926.setContent(html_089cbe4e0d5f8ecc89cb3f6d4921ef30);
+            
+        
+
+        circle_marker_e1e61c2611bb8fb05c01c10ef8fb2e6d.bindPopup(popup_82094d60a14534b38761fc3e75f10926)
+        ;
+
+        
+    
+    
+            circle_marker_e1e61c2611bb8fb05c01c10ef8fb2e6d.bindTooltip(
+                `<div>
+                     DEB-KER02 · ÉNYGÖ, M35 Józsa új csomópont — Stable Neighborhoods · Risk 19/100
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var measure_control_ce2f8177c695e2b61a8e17b759fb8599 = new L.Control.Measure(
+                {
+  "position": "bottomleft",
+  "primaryLengthUnit": "kilometers",
+  "secondaryLengthUnit": "meters",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_0e3d64d3832c18acd6a9db90087996f8.addControl(measure_control_ce2f8177c695e2b61a8e17b759fb8599);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+</script>
+</html>
