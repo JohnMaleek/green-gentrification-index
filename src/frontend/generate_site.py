@@ -441,11 +441,11 @@ def build_shell(template: Path, active: str) -> str:
 
 
 ACTIVE_CLASS = (
-    "class=\"flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-primary "
+    "class=\"flex w-full items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-primary "
     "text-secondary-fixed font-bold shadow-sm\""
 )
 IDLE_CLASS = (
-    "class=\"flex items-center gap-space-sm px-space-md py-space-sm rounded-lg "
+    "class=\"flex w-full items-center gap-space-sm px-space-md py-space-sm rounded-lg "
     "text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest "
     "transition-all duration-150\""
 )
@@ -472,10 +472,10 @@ def _shell_fragment(template: Path) -> str:
 
 def nav_anchor(path: str, href: str, label: str, icon: str, active: bool) -> str:
     cls = (
-        "flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-primary "
+        "flex w-full items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-primary "
         "cursor-default text-secondary-fixed font-bold shadow-sm"
         if active
-        else "flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim "
+        else "flex w-full items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim "
         "hover:bg-primary hover:text-surface-container-lowest transition-all duration-150"
     )
     cur = ' aria-current="page"' if active else ""
