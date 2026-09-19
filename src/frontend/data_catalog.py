@@ -174,3 +174,48 @@ class SiteCatalog:
         )
         g["Coverage"] = (100 - g["Missing_Pct"]).round(0).astype(int)
         return g
+
+    def top_improving(self, n: int = 3) -> list[dict]:
+        """Stations with the strongest measured environmental momentum."""
+        rows = sorted(
+            (s for s in self.stations() if s["improvement"] is not None),
+            key=lambda s: -s["improvement"],
+        )
+        return rows[:n]
+
+    def stations_geojson(self) -> str:
+        """GeoJSON FeatureCollection export of the 16 real monitoring stations."""
+        features = []
+        for r in self.stations():
+            props = {
+                "name": r["station"],
+                "location": r["location"],
+                "category": r["category"],
+                "risk_score": round(r["risk_score"], 2),
+                "risk_band": r["risk_band"],
+                "pm25": round(r["pm25"], 3),
+                "pm25_trend": round(r["trend"], 5),
+                "bus_stops": r["bus_stops"],
+                "months_to_who5": None if r["months"] is None else round(r["months"], 2),
+                "timeline": r["timeline"],
+                "justice_score": None if r["justice_score"] is None else round(r["justice_score"], 2),
+                "monitored": r["monitored"],
+                "watch": bool(r["watch"]),
+                "legacy_industrial": bool(r["legacy"]),
+            }
+            features.append(
+                {
+                    "type": "Feature",
+                    "geometry": {"type": "Point", "coordinates": [r["lon"], r["lat"]]},
+                    "properties": props,
+                }
+            )
+        return json.dumps(
+            {
+                "type": "FeatureCollection",
+                "name": "greensense_debrecen_stations",
+                "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
+                "features": features,
+            },
+            indent=2,
+        )
