@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.DS_Store
+*.pkl
+*.ipynb_checkpoints/
+output/
+.streamlit/secrets.toml
+node_modules/
+# Bulk DKV archive CSVs (248 MB) — not read by the app at runtime
+data/dkv/databases/DKV databases/Enclod archive data/
+# Re-fetchable historical map tiles (mosaics + georef are kept)
+data/historical/cache/

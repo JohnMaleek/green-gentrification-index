@@ -1,0 +1,20 @@
+{
+  "projection": "EPSG:23700 (EOV, HD72)",
+  "bbox_eov_epsg23700": [
+    838718.8,
+    242859.1,
+    850279.7,
+    251053.4
+  ],
+  "wgs84_bounds": [
+    47.502465734877624,
+    21.55288004274823,
+    47.57269525211139,
+    21.709949887890726
+  ],
+  "years": {
+    "1999": "D:\\AI Project\\green_gentrification_index\\data\\historical\\mosaic_1999.png",
+    "2020": "D:\\AI Project\\green_gentrification_index\\data\\historical\\mosaic_2020.png"
+  },
+  "attribution": "C\u00edvis GIStory \u2014 https://civisgistory.hu/ \u00b7 \u0150rv\u00e1ros K\u00f6zalap\u00edtv\u00e1ny \u00b7 TOP-7.1.1-16-H-ESZA-2021-02411 \u00b7 Erda Kft."
+}

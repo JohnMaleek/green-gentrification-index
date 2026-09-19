@@ -1,0 +1,81 @@
+observation_id,species_hungarian,species_latin,species_english,latitude,longitude,date_observed,abundance,rarity_status,debrecen_station
+OBM001,fekete rigó,Turdus merula,Eurasian Blackbird,47.5232,21.6337,2026-05-15,2,common,DEB-KER11
+OBM002,széncinege,Parus major,Great Tit,47.5232,21.6337,2026-05-16,3,common,DEB-KER11
+OBM003,vörösbegy,Erithacus rubecula,European Robin,47.5232,21.6337,2026-05-17,1,common,DEB-KER11
+OBM004,szürke galamb,Columba livia,Rock Dove,47.5232,21.6337,2026-05-18,5,common,DEB-KER11
+OBM005,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5232,21.6337,2026-05-19,2,uncommon,DEB-KER11
+OBM006,fehér költ,Motacilla alba,White Wagtail,47.5232,21.6337,2026-05-20,4,common,DEB-KER11
+OBM007,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5232,21.6337,2026-05-21,1,common,DEB-KER11
+OBM008,szarka,Pica pica,Eurasian Magpie,47.5232,21.6337,2026-05-22,2,common,DEB-KER11
+OBM009,seregély,Sturnus vulgaris,Common Starling,47.5232,21.6337,2026-05-23,8,common,DEB-KER11
+OBM010,szürke varjú,Corvus cornix,Hooded Crow,47.5232,21.6337,2026-05-24,3,common,DEB-KER11
+OBM011,fülemüle,Tachybaptus ruficollis,Little Grebe,47.5232,21.6337,2026-05-25,1,rare,DEB-KER11
+OBM012,búbosbanka,Upupa epops,Eurasian Hoopoe,47.5232,21.6337,2026-05-26,1,rare,DEB-KER11
+OBM013,fekete rigó,Turdus merula,Eurasian Blackbird,47.5578,21.5022,2026-05-15,1,common,DEB-KER01
+OBM014,széncinege,Parus major,Great Tit,47.5578,21.5022,2026-05-16,2,common,DEB-KER01
+OBM015,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5578,21.5022,2026-05-17,1,common,DEB-KER01
+OBM016,fehér költ,Motacilla alba,White Wagtail,47.5578,21.5022,2026-05-18,1,common,DEB-KER01
+OBM017,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5578,21.5022,2026-05-19,2,uncommon,DEB-KER01
+OBM018,szürke varjú,Corvus cornix,Hooded Crow,47.5578,21.5022,2026-05-20,2,common,DEB-KER01
+OBM019,seregély,Sturnus vulgaris,Common Starling,47.5578,21.5022,2026-05-21,4,common,DEB-KER01
+OBM020,szarka,Pica pica,Eurasian Magpie,47.5578,21.5022,2026-05-22,1,common,DEB-KER01
+OBM021,fekete rigó,Turdus merula,Eurasian Blackbird,47.5436,21.6230,2026-05-15,2,common,DEB-KER15
+OBM022,széncinege,Parus major,Great Tit,47.5436,21.6230,2026-05-16,3,common,DEB-KER15
+OBM023,vörösbegy,Erithacus rubecula,European Robin,47.5436,21.6230,2026-05-17,1,common,DEB-KER15
+OBM024,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5436,21.6230,2026-05-18,2,uncommon,DEB-KER15
+OBM025,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5436,21.6230,2026-05-19,1,common,DEB-KER15
+OBM026,fehér költ,Motacilla alba,White Wagtail,47.5436,21.6230,2026-05-20,2,common,DEB-KER15
+OBM027,szürke varjú,Corvus cornix,Hooded Crow,47.5436,21.6230,2026-05-21,2,common,DEB-KER15
+OBM028,szarka,Pica pica,Eurasian Magpie,47.5436,21.6230,2026-05-22,2,common,DEB-KER15
+OBM029,seregély,Sturnus vulgaris,Common Starling,47.5436,21.6230,2026-05-23,5,common,DEB-KER15
+OBM030,fekete rigó,Turdus merula,Eurasian Blackbird,47.5050,21.6358,2026-05-15,1,common,DEB-KER07
+OBM031,széncinege,Parus major,Great Tit,47.5050,21.6358,2026-05-16,2,common,DEB-KER07
+OBM032,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5050,21.6358,2026-05-17,1,uncommon,DEB-KER07
+OBM033,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5050,21.6358,2026-05-18,1,common,DEB-KER07
+OBM034,fehér költ,Motacilla alba,White Wagtail,47.5050,21.6358,2026-05-19,2,common,DEB-KER07
+OBM035,szürke varjú,Corvus cornix,Hooded Crow,47.5050,21.6358,2026-05-20,2,common,DEB-KER07
+OBM036,fekete rigó,Turdus merula,Eurasian Blackbird,47.4474,21.6306,2026-05-15,3,common,DEB-KER14
+OBM037,széncinege,Parus major,Great Tit,47.4474,21.6306,2026-05-16,2,common,DEB-KER14
+OBM038,vörösbegy,Erithacus rubecula,European Robin,47.4474,21.6306,2026-05-17,2,common,DEB-KER14
+OBM039,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.4474,21.6306,2026-05-18,3,uncommon,DEB-KER14
+OBM040,szép pintyfark,Carduelis carduelis,European Goldfinch,47.4474,21.6306,2026-05-19,2,common,DEB-KER14
+OBM041,fehér költ,Motacilla alba,White Wagtail,47.4474,21.6306,2026-05-20,3,common,DEB-KER14
+OBM042,szürke varjú,Corvus cornix,Hooded Crow,47.4474,21.6306,2026-05-21,2,common,DEB-KER14
+OBM043,szarka,Pica pica,Eurasian Magpie,47.4474,21.6306,2026-05-22,1,common,DEB-KER14
+OBM044,seregély,Sturnus vulgaris,Common Starling,47.4474,21.6306,2026-05-23,5,common,DEB-KER14
+OBM045,búbosbanka,Upupa epops,Eurasian Hoopoe,47.4474,21.6306,2026-05-24,1,rare,DEB-KER14
+OBM046,fekete rigó,Turdus merula,Eurasian Blackbird,47.5482,21.6694,2026-05-15,1,common,DEB-KER05
+OBM047,széncinege,Parus major,Great Tit,47.5482,21.6694,2026-05-16,2,common,DEB-KER05
+OBM048,vörösbegy,Erithacus rubecula,European Robin,47.5482,21.6694,2026-05-17,1,common,DEB-KER05
+OBM049,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5482,21.6694,2026-05-18,1,common,DEB-KER05
+OBM050,fehér költ,Motacilla alba,White Wagtail,47.5482,21.6694,2026-05-19,2,common,DEB-KER05
+OBM051,fekete rigó,Turdus merula,Eurasian Blackbird,47.5577,21.8380,2026-05-15,4,common,DEB-KER12
+OBM052,széncinege,Parus major,Great Tit,47.5577,21.8380,2026-05-16,5,common,DEB-KER12
+OBM053,vörösbegy,Erithacus rubecula,European Robin,47.5577,21.8380,2026-05-17,3,common,DEB-KER12
+OBM054,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5577,21.8380,2026-05-18,4,uncommon,DEB-KER12
+OBM055,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5577,21.8380,2026-05-19,3,common,DEB-KER12
+OBM056,fehér költ,Motacilla alba,White Wagtail,47.5577,21.8380,2026-05-20,4,common,DEB-KER12
+OBM057,szürke varjú,Corvus cornix,Hooded Crow,47.5577,21.8380,2026-05-21,3,common,DEB-KER12
+OBM058,szarka,Pica pica,Eurasian Magpie,47.5577,21.8380,2026-05-22,2,common,DEB-KER12
+OBM059,seregély,Sturnus vulgaris,Common Starling,47.5577,21.8380,2026-05-23,7,common,DEB-KER12
+OBM060,búbosbanka,Upupa epops,Eurasian Hoopoe,47.5577,21.8380,2026-05-24,1,rare,DEB-KER12
+OBM061,fekete rigó,Turdus merula,Eurasian Blackbird,47.5977,21.5802,2026-05-15,2,common,DEB-KER18
+OBM062,széncinege,Parus major,Great Tit,47.5977,21.5802,2026-05-16,2,common,DEB-KER18
+OBM063,vörösbegy,Erithacus rubecula,European Robin,47.5977,21.5802,2026-05-17,2,common,DEB-KER18
+OBM064,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.5977,21.5802,2026-05-18,2,uncommon,DEB-KER18
+OBM065,szép pintyfark,Carduelis carduelis,European Goldfinch,47.5977,21.5802,2026-05-19,1,common,DEB-KER18
+OBM066,fehér költ,Motacilla alba,White Wagtail,47.5977,21.5802,2026-05-20,3,common,DEB-KER18
+OBM067,szürke varjú,Corvus cornix,Hooded Crow,47.5977,21.5802,2026-05-21,2,common,DEB-KER18
+OBM068,fekete rigó,Turdus merula,Eurasian Blackbird,47.4644,21.5886,2026-05-15,3,common,DEB-KER03
+OBM069,széncinege,Parus major,Great Tit,47.4644,21.5886,2026-05-16,3,common,DEB-KER03
+OBM070,vörösbegy,Erithacus rubecula,European Robin,47.4644,21.5886,2026-05-17,2,common,DEB-KER03
+OBM071,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.4644,21.5886,2026-05-18,3,uncommon,DEB-KER03
+OBM072,szép pintyfark,Carduelis carduelis,European Goldfinch,47.4644,21.5886,2026-05-19,2,common,DEB-KER03
+OBM073,fehér költ,Motacilla alba,White Wagtail,47.4644,21.5886,2026-05-20,3,common,DEB-KER03
+OBM074,szürke varjú,Corvus cornix,Hooded Crow,47.4644,21.5886,2026-05-21,2,common,DEB-KER03
+OBM075,fekete rigó,Turdus merula,Eurasian Blackbird,47.4616,21.6330,2026-05-15,2,common,DEB-KER04
+OBM076,széncinege,Parus major,Great Tit,47.4616,21.6330,2026-05-16,2,common,DEB-KER04
+OBM077,vörösbegy,Erithacus rubecula,European Robin,47.4616,21.6330,2026-05-17,1,common,DEB-KER04
+OBM078,szúrós nádiposzáta,Sylvia communis,Common Whitethroat,47.4616,21.6330,2026-05-18,2,uncommon,DEB-KER04
+OBM079,szép pintyfark,Carduelis carduelis,European Goldfinch,47.4616,21.6330,2026-05-19,1,common,DEB-KER04
+OBM080,fehér költ,Motacilla alba,White Wagtail,47.4616,21.6330,2026-05-20,2,common,DEB-KER04
