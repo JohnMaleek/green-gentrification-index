@@ -13,6 +13,7 @@ import pandas as pd
 import plotly.express as px
 
 from src.config import OUTPUT_DIR, PROCESSED_DIR, RISK_BAND_COLORS
+from src.frontend.generate_site import build as build_frontend_site
 from src.loaders.biodiversity_loader import BiodiversityLoader
 from src.loaders.dkv_loader import DKVLoader
 from src.loaders.green_sentinel_loader import GreenSentinelLoader
@@ -31,8 +32,9 @@ from src.visualizations import (
 from src.visualizations.historical_viz import HistoricalVisualizer
 from src.visualizations.theme import apply_theme
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
 
 def main() -> None:
@@ -195,6 +197,9 @@ def main() -> None:
         "\nEnvironmental Justice summary:\n%s",
         justice_log.sort_values("environmental_justice_score", ascending=False).set_index("label").to_string(),
     )
+
+    build_frontend_site()
+    logger.info("Static 'GreenSense Debrecen' site regenerated under output/frontend_site/")
 
 
 if __name__ == "__main__":

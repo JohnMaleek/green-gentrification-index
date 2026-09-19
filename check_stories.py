@@ -182,6 +182,26 @@ def main() -> int:
         bounds_ok = bool(b) and 47.45 <= b[0] <= 47.6 and 21.45 <= b[1] <= 21.8
     check("Historical: georeferencing metadata present & in range", bounds_ok)
 
+    # --------------------------------------------------------------- static "GreenSense" site
+    from src.frontend.generate_site import NAV, SITE_DIR
+
+    files = {f.name for f in SITE_DIR.glob("*.html")}
+    check("Static site: 8 pages rendered", len(files) == 8, f"got {sorted(files)}")
+    nav_links = {href for _, href, _label, _icon in NAV}
+    check(
+        "Static site: every nav link resolves to a page",
+        nav_links <= files,
+        f"missing {sorted(nav_links - files)}",
+    )
+    idx = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+    check("Static site: real record count on overview", "149,683" in idx, "record count missing")
+    check("Static site: measured-window pill (no fake baseline)", "May 21" in idx and "10 of 16" in idx)
+    check("Static site: no fabricated station codes", "DEB-NY02" not in idx and "DEB-CSA" not in idx)
+    sa = (SITE_DIR / "station_analysis.html").read_text(encoding="utf-8")
+    check("Static site: DEB-KER11 station profile present", "DEB-KER11" in sa)
+    dq = (SITE_DIR / "data_quality.html").read_text(encoding="utf-8")
+    check("Static site: data-quality page lists real corpus stats", "36 raw" in dq and "149,683" in dq)
+
     print()
     if FAILURES:
         print(f"check_stories FAILURES ({len(FAILURES)}):")

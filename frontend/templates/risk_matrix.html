@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>GreenSense Debrecen — Civic Environmental Intelligence</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "outline": "#727973", "primary-container": "#0f2d1f", "on-secondary-container": "#00714d", "on-background": "#0b1c30", "on-tertiary-fixed": "#001d31", "outline-variant": "#c2c8c2", "secondary-fixed": "#6ffbbe", "primary-fixed-dim": "#adceb9", "surface-container-highest": "#d3e4fe", "surface-container": "#e5eeff", "on-surface": "#0b1c30", "on-surface-variant": "#424844", "tertiary-fixed": "#cce5ff", "tertiary-container": "#002a44", "surface-container-high": "#dce9ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#4edea3", "primary-fixed": "#c9ebd5", "on-error": "#ffffff", "on-primary-container": "#769683", "surface-variant": "#d3e4fe", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#2f4d3d", "on-primary": "#ffffff", "primary": "#00170c", "secondary-container": "#6cf8bb", "tertiary-fixed-dim": "#93ccff", "surface-dim": "#cbdbf5", "surface": "#f8f9ff", "error": "#ba1a1a", "on-tertiary-container": "#2e95da", "on-secondary-fixed-variant": "#005236", "inverse-primary": "#adceb9", "surface-tint": "#476554", "on-secondary-fixed": "#002113", "secondary": "#006c49", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "on-primary-fixed": "#022113", "tertiary": "#001524", "inverse-on-surface": "#eaf1ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-desktop": "2.5rem", "margin": "1rem", "gutter": "1rem", "space-xl": "2.5rem", "margin-tablet": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "telemetry-numeral": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "telemetry-numeral": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-primary-container text-on-primary flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)] z-50 overflow-y-auto"><div class="p-space-lg"><div class="flex items-center gap-space-sm pb-space-lg mb-space-md"><img alt="GreenSense Debrecen Civic Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXvxwSN-o0BHnxy_ENodUMJsIW-qAJJLGmMlXSADwC6D_C_8SAruuXW2c5x1V5FXOLCu4niyuzr1a3mGTHEMqx4Enxz0h7ekhlcFpOVF7rvO_AD8RPqSJrUcaywL356quAfaggjdyHbHJmIXCA8mMe6gFKT2cG7PTnX2eX1DuXFQpT8mCgCSwo2YpXsAc8va4NRY4eeeG7qa9nUqZjeogKZ2ujS2U_kQBvBFUzpO2R__uz36z9QHkeFQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest leading-tight tracking-tight">GreenSense</span><span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Debrecen • DEIK.AI 2026</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-secondary-fixed font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-md text-label-md">Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="risk-map" href="#"><span class="material-symbols-outlined text-[20px]">my_location</span><span class="font-label-md text-label-md">Risk Map</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="environmental-trends" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-label-md text-label-md">Environmental Trends</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all duration-150 bg-primary text-secondary-fixed font-bold rounded-lg shadow-sm" data-path="risk-analysis" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Risk Analysis</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="station-analysis" href="#"><span class="material-symbols-outlined text-[20px]">cell_tower</span><span class="font-label-md text-label-md">Station Analysis</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="data-quality" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Data Quality</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-md"><div class="bg-primary/50 p-space-sm rounded-lg flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-secondary-fixed"><span class="material-symbols-outlined text-[16px]">memory</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Transit Telemetry</span></div><p class="font-body-sm text-body-sm text-primary-fixed-dim">Green Sentinel + DKV Transit Engine</p></div><div class="flex items-center justify-between px-space-xs"><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-surface-container-lowest transition-colors" data-path="data-sources" href="#">Data Sources</a><span class="text-primary-fixed-dim/40 font-body-sm text-body-sm">•</span><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-surface-container-lowest transition-colors" data-path="about-project" href="#">About Project</a></div><div class="inline-flex items-center justify-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container/20 text-secondary-fixed font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">award_star</span><span>DEIK.AI 2026 Category B</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 flex items-center justify-between px-margin-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col justify-center"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Debrecen Environmental Intelligence</span><span class="hidden xl:inline-flex items-center px-space-xs py-0.5 rounded text-on-tertiary-fixed-variant bg-tertiary-fixed font-label-sm text-label-sm">Civic Telemetry</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">AI-powered analysis of urban environmental change &amp; transit nexus</span></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span><span>2023–2025 Historical Baseline (30-day Rolling Live)</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed/20 text-on-secondary-container font-label-sm text-label-sm"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span>Live Dataset: 16 Stations Active</span></div><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden sm:flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface">City Planner / DEIK Research</span><span class="font-label-sm text-label-sm text-on-surface-variant">Debrecen Municipal Node</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<section class="flex flex-col xl:flex-row xl:items-end justify-between pb-space-lg gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-secondary">bubble_chart</span>
+          Spatial Policy Console
+        </span>
+<span class="text-outline-variant font-body-sm text-body-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DEIK.AI Model v2.4</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Urban Risk Matrix: Environmental Shift vs. Baseline Pollution</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">
+        Bivariate categorization model mapping 16 Green Sentinel stations against DKV transit accessibility. Early detection of spatial shifts, ecological resilience, and infrastructure pressure.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm self-start xl:self-auto bg-surface-container-lowest p-space-xs rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<span>Filter Transit:</span>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-highest hover:bg-secondary-container/50 text-on-surface font-label-sm text-label-sm transition-all duration-200 flex items-center gap-space-xs" id="transitFilterToggle" onclick="toggleTransitFilter()">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>DKV Density &gt; 50 stops/km²</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="resetMatrixFocus()" title="Reset View">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-gutter-desktop">
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-space-md">
+<div class="relative bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col overflow-hidden">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bivariate Station Scatter Model</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Bubble Size = Transit Reach (Routes / km²)</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-error"></span>Emerging Green</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>Established Clean</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>Stable</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>Challenge</span>
+</div>
+</div>
+<div class="relative w-full aspect-[16/11] min-h-[460px] bg-surface rounded-xl p-space-lg select-none overflow-hidden">
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2">
+<div class="bg-orange-500/[0.04] p-space-md flex flex-col justify-start items-start">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-orange-100 text-orange-900 font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-600 animate-pulse"></span>
+                CHALLENGE ZONES
+              </div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1 max-w-[200px]">Low ecological shift, sustained baseline particulate load</span>
+</div>
+<div class="bg-error/[0.04] p-space-md flex flex-col justify-start items-end text-right">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                EMERGING GREEN ZONES
+              </div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1 max-w-[220px]">Rapid improvement dynamic under substantial ambient pollution</span>
+</div>
+<div class="bg-amber-500/[0.03] p-space-md flex flex-col justify-end items-start">
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mb-1 max-w-[200px]">Moderate variance, balanced historical resilience</span>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                STABLE NEIGHBORHOODS
+              </div>
+</div>
+<div class="bg-secondary/[0.05] p-space-md flex flex-col justify-end items-end text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mb-1 max-w-[220px]">Low pollution threshold, durable ecosystem equilibrium</span>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                ESTABLISHED CLEAN AREAS
+              </div>
+</div>
+</div>
+<div class="absolute inset-x-8 top-1/2 h-px bg-outline-variant/60 -translate-y-1/2 pointer-events-none"></div>
+<div class="absolute inset-y-8 left-1/2 w-px bg-outline-variant/60 -translate-x-1/2 pointer-events-none"></div>
+<div class="absolute left-3 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 tracking-wider uppercase">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            Current Pollution Index (AQI µg/m³)
+          </div>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 tracking-wider uppercase">
+            Environmental Improvement Rate (% change over baseline)
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+<div class="absolute left-6 top-8 text-on-surface-variant/60 font-body-sm text-body-sm">100 µg/m³</div>
+<div class="absolute left-8 top-1/2 -translate-y-4 text-on-surface-variant/60 font-body-sm text-body-sm">50</div>
+<div class="absolute left-8 bottom-8 text-on-surface-variant/60 font-body-sm text-body-sm">0</div>
+<div class="absolute left-10 bottom-4 text-on-surface-variant/60 font-body-sm text-body-sm">0%</div>
+<div class="absolute left-1/2 -translate-x-3 bottom-4 text-on-surface-variant/60 font-body-sm text-body-sm">+20%</div>
+<div class="absolute right-8 bottom-4 text-on-surface-variant/60 font-body-sm text-body-sm">+40%</div>
+<div class="absolute inset-10 z-20" id="scatterContainer">
+<!-- Emerging Green Hero: Petőfi tér -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-KER11" style="left: 81%; top: 26%;">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-14 h-14 rounded-full bg-error/20 animate-ping"></span>
+<span class="absolute w-12 h-12 rounded-full bg-error/30 group-hover:scale-125 transition-transform duration-200"></span>
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center font-telemetry-numeral text-[11px] shadow-lg ring-2 ring-surface-container-lowest">
+                  42
+                </div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Petőfi tér (DEB-KER11)
+                </span>
+</div>
+</div>
+<!-- Challenge: Déli Ipari Park -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-IND14" style="left: 18%; top: 18%;">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-orange-600 text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">14</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Déli Ipari (DEB-IND14)</span>
+</div>
+</div>
+<!-- Challenge: Vágóhíd utca -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-VAG12" style="left: 28%; top: 29%;">
+<div class="relative flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-orange-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">28</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 top-full mt-1 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Vágóhíd u. (DEB-VAG12)</span>
+</div>
+</div>
+<!-- Challenge: Nyugati Ipari -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-NYU09" style="left: 12%; top: 38%;">
+<div class="w-6 h-6 rounded-full bg-orange-600 text-on-error flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">8</div>
+</div>
+<!-- Stable: Tócóskert -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-TOC08" style="left: 34%; top: 62%;">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-amber-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">22</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Tócóskert (DEB-TOC08)</span>
+</div>
+</div>
+<!-- Stable: Újkert -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-UJK05" style="left: 42%; top: 68%;">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-amber-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">26</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Újkert (DEB-UJK05)</span>
+</div>
+</div>
+<!-- Stable: Vénkert -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-VEN07" style="left: 26%; top: 74%;">
+<div class="w-6 h-6 rounded-full bg-amber-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">15</div>
+</div>
+<!-- Stable: Dobozi lakótelep -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-DOB10" style="left: 46%; top: 81%;">
+<div class="w-6 h-6 rounded-full bg-amber-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">18</div>
+</div>
+<!-- Established Clean: Nagyerdei Park -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-NY02" style="left: 88%; top: 82%;">
+<div class="relative flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">34</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-1.5 pointer-events-none opacity-90 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Nagyerdei Park (DEB-NY02)
+                </span>
+</div>
+</div>
+<!-- Established Clean: Egyetem tér -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-UNI04" style="left: 74%; top: 71%;">
+<div class="relative flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">31</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 top-full mt-1 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Egyetem tér (DEB-UNI04)</span>
+</div>
+</div>
+<!-- Established Clean: Pallag Forest Node -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-PAL01" style="left: 92%; top: 90%;">
+<div class="relative flex items-center justify-center">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">6</div>
+</div>
+<div class="absolute right-full top-1/2 -translate-y-1/2 mr-1 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] whitespace-nowrap shadow-md">Pallag (DEB-PAL01)</span>
+</div>
+</div>
+<!-- Extra node for 16 stations model completeness -->
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-CSAP03" style="left: 62%; top: 76%;">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">12</div>
+</div>
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-LUD06" style="left: 54%; top: 44%;">
+<div class="w-6 h-6 rounded-full bg-orange-400 text-on-error flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">19</div>
+</div>
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-JOS13" style="left: 71%; top: 35%;">
+<div class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">24</div>
+</div>
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="false" data-station="DEB-MON15" style="left: 22%; top: 86%;">
+<div class="w-6 h-6 rounded-full bg-amber-500 text-on-error flex items-center justify-center font-telemetry-numeral text-[9px] shadow-md ring-2 ring-surface-container-lowest">11</div>
+</div>
+<div class="station-node absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group transition-all duration-300" data-high-transit="true" data-station="DEB-HAT16" style="left: 58%; top: 22%;">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center font-telemetry-numeral text-[10px] shadow-md ring-2 ring-surface-container-lowest">33</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low transition-all duration-200" id="inspectorPanel">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error/15 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="inspStationName">Petőfi tér Transit Hub (DEB-KER11)</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold" id="inspQuadrantBadge">EMERGING GREEN ZONE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="inspSubtitle">Inner-City Central Railway Terminal Corridor • High Redevelopment Pressure</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ecol. Shift</span>
+<span class="font-telemetry-numeral text-telemetry-numeral text-secondary font-bold" id="inspImprovement">+32.4%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pollution</span>
+<span class="font-telemetry-numeral text-telemetry-numeral text-error font-bold" id="inspPollution">74 µg/m³</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">DKV Reach</span>
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface font-bold" id="inspTransit">42 routes</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quadrant I (Top-R)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">3 Stations</span>
+<span class="font-body-sm text-body-sm text-error font-medium">High Attention Urgency</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quadrant II (Bottom-R)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4 Stations</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Ecosystem Anchors</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quadrant III (Bottom-L)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">5 Stations</span>
+<span class="font-body-sm text-body-sm text-amber-700 font-medium">Resilient Residential</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quadrant IV (Top-L)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4 Stations</span>
+<span class="font-body-sm text-body-sm text-orange-700 font-medium">Industrial Challenge</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Civic Policy &amp; Methodological Guardrails</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Municipal Directive • Debrecen City Hall</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low text-on-surface flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Ethical Analytical Posture</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic leading-relaxed">
+            “This system is an early-warning analytical instrument designed for municipal proactive planning. It identifies areas under rapid transitional dynamics and does <strong class="font-bold text-on-surface">NOT claim or prove that gentrification is occurring.</strong>”
+          </p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Core Analytic Pillars</span>
+<div class="flex gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-7 h-7 rounded-full bg-secondary/15 text-secondary flex-shrink-0 flex items-center justify-center font-bold text-[12px]">1</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold">Development Pressure Identification</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Areas like Petőfi tér receiving environmental benefits while maintaining heavy transit density (DKV junction) naturally become prime corridors for commercial redevelopment.
+              </p>
+</div>
+</div>
+<div class="flex gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-7 h-7 rounded-full bg-secondary/15 text-secondary flex-shrink-0 flex items-center justify-center font-bold text-[12px]">2</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold">Targeted Urban Intervention</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Enables municipal leaders to deploy green public housing and rent-stability covenants proactively, well before speculative market shifts materialize.
+              </p>
+</div>
+</div>
+<div class="flex gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-7 h-7 rounded-full bg-secondary/15 text-secondary flex-shrink-0 flex items-center justify-center font-bold text-[12px]">3</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold">Public Health Equity</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Ensures that legacy working populations residing in transitioning high-transit zones are protected and directly experience long-term air quality improvements.
+              </p>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-primary-container text-on-primary flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Methodology Specification</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[16px]">verified</span>
+</div>
+<span class="font-headline-sm text-[15px] font-bold text-surface-container-lowest">Bivariate K-Means Clustering &amp; Spatial Transit Overlay Model</span>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-1">
+            Engineered by DEIK.AI 2026. Merging 36-month baseline sensor drift logs (PM2.5, NO₂, O₃) with GTFS static/real-time DKV route density tables.
+          </p>
+</div>
+</div>
+<div class="relative bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center gap-space-md overflow-hidden">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Debrecen Great Forest Nagyerdo park area during sunny day with lush green canopy and clean urban pathways adjacent to tram tracks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vFv8k0q38VPT7UdPy4o8vy7DJ_Ywsesv4cdiLtG0WTRy9j9dAYsXJ9B3QfE3lOJJkvlJKIAEs1ahPULbERJSzQTbOGhxMUzBT64UnvGH8xCVWRMT8XCVMb98v7QkrVnLbDtAefmdmsqImZrJNOtIO2paGjPfM6HewyCzejHO0SiJohAnUH9jcZWYu2dQQiaJHrTMKJ9SpgFKel_VSueWlYQ0i5tnx5wXbcRmNALD7_9edTjDYyfpgA"/>
+</div>
+<div class="flex flex-col justify-center min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Field Ground-Truth Reference</span>
+<span class="font-headline-sm text-[14px] text-on-surface font-bold truncate">Nagyerdei &amp; Pallag Buffer Zone</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">
+            Vegetation index (NDVI &gt; 0.72) sustains microclimate stability even during high summer thermal inversions.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const stationCatalog = {
+    'DEB-KER11': {
+      name: 'Petőfi tér Transit Hub (DEB-KER11)',
+      quadrant: 'EMERGING GREEN ZONE',
+      badgeClass: 'bg-error-container text-on-error-container',
+      subtitle: 'Inner-City Central Railway Terminal Corridor • High Redevelopment Pressure',
+      improvement: '+32.4%',
+      pollution: '74 µg/m³',
+      transit: '42 routes',
+      icon: 'warning',
+      iconColor: 'text-error'
+    },
+    'DEB-IND14': {
+      name: 'Déli Ipari Park Industrial Base (DEB-IND14)',
+      quadrant: 'CHALLENGE ZONE',
+      badgeClass: 'bg-orange-100 text-orange-900',
+      subtitle: 'Heavy Logistics & Manufacturing Peripheral Zone • Sustained Heavy PM Load',
+      improvement: '+4.1%',
+      pollution: '86 µg/m³',
+      transit: '14 routes',
+      icon: 'factory',
+      iconColor: 'text-orange-600'
+    },
+    'DEB-VAG12': {
+      name: 'Vágóhíd utca Corridor (DEB-VAG12)',
+      quadrant: 'CHALLENGE ZONE',
+      badgeClass: 'bg-orange-100 text-orange-900',
+      subtitle: 'Mixed Industrial/Rail Overpass Intersection • Freight Fleet Impact',
+      improvement: '+9.8%',
+      pollution: '71 µg/m³',
+      transit: '28 routes',
+      icon: 'local_shipping',
+      iconColor: 'text-orange-600'
+    },
+    'DEB-NY02': {
+      name: 'Nagyerdei Park Sentinel (DEB-NY02)',
+      quadrant: 'ESTABLISHED CLEAN AREA',
+      badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+      subtitle: 'Old Forest Ecological Core • University Botanical Buffer',
+      improvement: '+37.2%',
+      pollution: '18 µg/m³',
+      transit: '34 routes',
+      icon: 'park',
+      iconColor: 'text-secondary'
+    },
+    'DEB-UNI04': {
+      name: 'Egyetem tér Academic Campus (DEB-UNI04)',
+      quadrant: 'ESTABLISHED CLEAN AREA',
+      badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+      subtitle: 'Higher Education Civic Zone • Low Emission Vehicle Restrictions',
+      improvement: '+29.6%',
+      pollution: '29 µg/m³',
+      transit: '31 routes',
+      icon: 'school',
+      iconColor: 'text-secondary'
+    },
+    'DEB-PAL01': {
+      name: 'Pallag Forest Node (DEB-PAL01)',
+      quadrant: 'ESTABLISHED CLEAN AREA',
+      badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+      subtitle: 'Northern Agrarian-Forestry Belt • Baseline Reference Station',
+      improvement: '+38.5%',
+      pollution: '11 µg/m³',
+      transit: '6 routes',
+      icon: 'forest',
+      iconColor: 'text-secondary'
+    },
+    'DEB-TOC08': {
+      name: 'Tócóskert Residential Sector (DEB-TOC08)',
+      quadrant: 'STABLE NEIGHBORHOOD',
+      badgeClass: 'bg-amber-100 text-amber-900',
+      subtitle: 'High-Density Precast Housing Estate • Moderate Heat-Island Effect',
+      improvement: '+13.5%',
+      pollution: '38 µg/m³',
+      transit: '22 routes',
+      icon: 'apartment',
+      iconColor: 'text-amber-600'
+    },
+    'DEB-UJK05': {
+      name: 'Újkert Municipal Sector (DEB-UJK05)',
+      quadrant: 'STABLE NEIGHBORHOOD',
+      badgeClass: 'bg-amber-100 text-amber-900',
+      subtitle: 'Mid-century Urban Residential Complex • Balanced Transit Flow',
+      improvement: '+17.0%',
+      pollution: '32 µg/m³',
+      transit: '26 routes',
+      icon: 'home',
+      iconColor: 'text-amber-600'
+    }
+  };
+
+  let transitFiltered = false;
+
+  function attachStationEvents() {
+    const nodes = document.querySelectorAll('.station-node');
+    nodes.forEach(node => {
+      node.addEventListener('mouseenter', () => {
+        const id = node.getAttribute('data-station');
+        const data = stationCatalog[id];
+        if (data) {
+          updateInspector(data);
+        }
+      });
+    });
+  }
+
+  function updateInspector(data) {
+    document.getElementById('inspStationName').textContent = data.name;
+    const badge = document.getElementById('inspQuadrantBadge');
+    badge.textContent = data.quadrant;
+    badge.className = `px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold ${data.badgeClass}`;
+    document.getElementById('inspSubtitle').textContent = data.subtitle;
+    document.getElementById('inspImprovement').textContent = data.improvement;
+    document.getElementById('inspPollution').textContent = data.pollution;
+    document.getElementById('inspTransit').textContent = data.transit;
+  }
+
+  function toggleTransitFilter() {
+    transitFiltered = !transitFiltered;
+    const button = document.getElementById('transitFilterToggle');
+    const nodes = document.querySelectorAll('.station-node');
+
+    if (transitFiltered) {
+      button.classList.add('bg-primary', 'text-surface-container-lowest');
+      button.classList.remove('bg-surface-container-highest', 'text-on-surface');
+      nodes.forEach(node => {
+        const isHigh = node.getAttribute('data-high-transit') === 'true';
+        if (!isHigh) {
+          node.classList.add('opacity-15', 'scale-75');
+        } else {
+          node.classList.remove('opacity-15', 'scale-75');
+          node.classList.add('scale-110');
+        }
+      });
+    } else {
+      button.classList.remove('bg-primary', 'text-surface-container-lowest');
+      button.classList.add('bg-surface-container-highest', 'text-on-surface');
+      nodes.forEach(node => {
+        node.classList.remove('opacity-15', 'scale-75', 'scale-110');
+      });
+    }
+  }
+
+  function resetMatrixFocus() {
+    if (transitFiltered) {
+      toggleTransitFilter();
+    }
+    updateInspector(stationCatalog['DEB-KER11']);
+  }
+
+  document.addEventListener('DOMContentLoaded', attachStationEvents);
+  attachStationEvents();
+</script></main></div></body></html>

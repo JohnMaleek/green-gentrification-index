@@ -27,14 +27,15 @@ from src.visualizations import (
     RiskMatrixVisualizer,
     TrendVisualizer,
 )
+from src.frontend.streamlit_brand import BRAND_CSS, hero_html, sidebar_brand
 from src.visualizations.historical_viz import HistoricalVisualizer
 from src.visualizations.theme import apply_theme
 
 logging.basicConfig(level=logging.ERROR)
 
 st.set_page_config(
-    page_title="Green Gentrification Index — Debrecen",
-    page_icon="🌍",
+    page_title="GreenSense Debrecen — Environmental Intelligence",
+    page_icon="🌳",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -115,6 +116,7 @@ CSS = """
 </style>
 """
 st.markdown(CSS, unsafe_allow_html=True)
+st.markdown(BRAND_CSS, unsafe_allow_html=True)
 
 
 @st.cache_data(show_spinner="Loading and processing Green Sentinel data...")
@@ -192,18 +194,7 @@ hist_viz = HistoricalVisualizer(hist_frame, hist_georef, hist_mosaics)
 # ---------------------------------------------------------------------------
 # SIDEBAR — brand, live risk summary, functional filter
 # ---------------------------------------------------------------------------
-st.sidebar.markdown(
-    """
-    <div class="sb-brand">
-        <div class="sb-logo">🌍</div>
-        <div>
-            <div class="sb-name">Green Gentrification Index</div>
-            <div class="sb-sub">Debrecen · Environmental Justice</div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+st.sidebar.markdown(sidebar_brand(), unsafe_allow_html=True)
 
 st.sidebar.markdown("### 📍 Live Risk Summary")
 counts = report["risk_category"].value_counts()
@@ -329,23 +320,7 @@ def kpi_row(cards: list[tuple[str, str, str, str]]) -> None:
 
 
 def hero() -> None:
-    st.markdown(
-        """
-        <div class="hero">
-            <div class="hero-emoji">🌍</div>
-            <div>
-                <div class="hero-title">Green Gentrification Index: Debrecen</div>
-                <div class="hero-sub">Environmental Justice Dashboard</div>
-                <div class="hero-tag">
-                    Analyzing 30 days of Green Sentinel monitoring data (May 21 – June 19, 2026)
-                    across 16 stations, combined with DKV transit connectivity, to spot
-                    environmental gentrification pressure before it displaces residents.
-                </div>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.markdown(hero_html(), unsafe_allow_html=True)
 
 
 TAB1, TAB2, TAB3, TAB4, TAB5, TAB6, TAB7, TAB8 = st.tabs(
@@ -1386,7 +1361,7 @@ with TAB8:
     st.markdown(f"_Measured legacy-industry ↔ improvement correlation: r ≈ **{corr:+.2f}**_ (4 industrial sites, n small — illustrative, not a causal claim).")
 
 st.markdown(
-    '<div class="footer">🌍 Green Gentrification Index · Debrecen · DEIK.AI Challenge 2026 — '
+    '<div class="footer">🌳 GreenSense Debrecen · Green Gentrification Index · DEIK.AI Challenge 2026 — '
     "Category B (Urban Environmental Monitoring) · Built on Green Sentinel + DKV + iNaturalist + OpenBioMaps + PADAPT open data</div>",
     unsafe_allow_html=True,
 )

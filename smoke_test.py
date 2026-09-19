@@ -43,6 +43,7 @@ then_now_present = any("Then & Now" in s.value for s in at.subheader) or any(
 watch_table_present = any("Gentrification-watch" in s.value for s in at.subheader) or any(
     "Gentrification-watch" in m.value for m in at.markdown
 )
+brand_present = any("GreenSense" in m.value for m in at.markdown)
 print(f"Sidebar risk-category filters: {len(filter_widgets)}")
 print(f"Scoreboard tab content present: {scoreboard_present}")
 print(f"Clean-air timeline present: {timeline_present}")
@@ -50,6 +51,7 @@ print(f"Environmental justice section present: {justice_present}")
 print(f"Justice scoreboard table present: {justice_scoreboard_present}")
 print(f"Then & Now tab content present: {then_now_present}")
 print(f"Gentrification-watch table present: {watch_table_present}")
+print(f"GreenSense brand applied: {brand_present}")
 print(f"Hero banner rendered: {len(hero_blocks) > 0}")
 print(f"Sidebar brand rendered: {len(sidebar_brand) > 0}")
 print(f"Markdown blocks total: {len(at.markdown)}")
@@ -64,6 +66,7 @@ if (
     and justice_present
     and then_now_present
     and watch_table_present
+    and brand_present
 ):
     print("SMOKE TEST PASSED")
 else:

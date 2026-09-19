@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>GreenSense Debrecen — Civic Environmental Intelligence</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "outline": "#727973", "primary-container": "#0f2d1f", "on-secondary-container": "#00714d", "on-background": "#0b1c30", "on-tertiary-fixed": "#001d31", "outline-variant": "#c2c8c2", "secondary-fixed": "#6ffbbe", "primary-fixed-dim": "#adceb9", "surface-container-highest": "#d3e4fe", "surface-container": "#e5eeff", "on-surface": "#0b1c30", "on-surface-variant": "#424844", "tertiary-fixed": "#cce5ff", "tertiary-container": "#002a44", "surface-container-high": "#dce9ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#4edea3", "primary-fixed": "#c9ebd5", "on-error": "#ffffff", "on-primary-container": "#769683", "surface-variant": "#d3e4fe", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#2f4d3d", "on-primary": "#ffffff", "primary": "#00170c", "secondary-container": "#6cf8bb", "tertiary-fixed-dim": "#93ccff", "surface-dim": "#cbdbf5", "surface": "#f8f9ff", "error": "#ba1a1a", "on-tertiary-container": "#2e95da", "on-secondary-fixed-variant": "#005236", "inverse-primary": "#adceb9", "surface-tint": "#476554", "on-secondary-fixed": "#002113", "secondary": "#006c49", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "on-primary-fixed": "#022113", "tertiary": "#001524", "inverse-on-surface": "#eaf1ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-desktop": "2.5rem", "margin": "1rem", "gutter": "1rem", "space-xl": "2.5rem", "margin-tablet": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "telemetry-numeral": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "telemetry-numeral": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-primary-container text-on-primary flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)] z-50 overflow-y-auto"><div class="p-space-lg"><div class="flex items-center gap-space-sm pb-space-lg mb-space-md"><img alt="GreenSense Debrecen Civic Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXvxwSN-o0BHnxy_ENodUMJsIW-qAJJLGmMlXSADwC6D_C_8SAruuXW2c5x1V5FXOLCu4niyuzr1a3mGTHEMqx4Enxz0h7ekhlcFpOVF7rvO_AD8RPqSJrUcaywL356quAfaggjdyHbHJmIXCA8mMe6gFKT2cG7PTnX2eX1DuXFQpT8mCgCSwo2YpXsAc8va4NRY4eeeG7qa9nUqZjeogKZ2ujS2U_kQBvBFUzpO2R__uz36z9QHkeFQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-container-lowest leading-tight tracking-tight">GreenSense</span><span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Debrecen • DEIK.AI 2026</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-secondary-fixed font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-md text-label-md">Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="risk-map" href="#"><span class="material-symbols-outlined text-[20px]">my_location</span><span class="font-label-md text-label-md">Risk Map</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="environmental-trends" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-label-md text-label-md">Environmental Trends</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="risk-analysis" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Risk Analysis</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="station-analysis" href="#"><span class="material-symbols-outlined text-[20px]">cell_tower</span><span class="font-label-md text-label-md">Station Analysis</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary hover:text-surface-container-lowest transition-all duration-150" data-path="data-quality" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Data Quality</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-md"><div class="bg-primary/50 p-space-sm rounded-lg flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-secondary-fixed"><span class="material-symbols-outlined text-[16px]">memory</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Transit Telemetry</span></div><p class="font-body-sm text-body-sm text-primary-fixed-dim">Green Sentinel + DKV Transit Engine</p></div><div class="flex items-center justify-between px-space-xs"><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-surface-container-lowest transition-colors" data-path="data-sources" href="#">Data Sources</a><span class="text-primary-fixed-dim/40 font-body-sm text-body-sm">•</span><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-surface-container-lowest transition-colors" data-path="about-project" href="#">About Project</a></div><div class="inline-flex items-center justify-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container/20 text-secondary-fixed font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">award_star</span><span>DEIK.AI 2026 Category B</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 flex items-center justify-between px-margin-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col justify-center"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Debrecen Environmental Intelligence</span><span class="hidden xl:inline-flex items-center px-space-xs py-0.5 rounded text-on-tertiary-fixed-variant bg-tertiary-fixed font-label-sm text-label-sm">Civic Telemetry</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">AI-powered analysis of urban environmental change &amp; transit nexus</span></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span><span>2023–2025 Historical Baseline (30-day Rolling Live)</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed/20 text-on-secondary-container font-label-sm text-label-sm"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span>Live Dataset: 16 Stations Active</span></div><button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden sm:flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface">City Planner / DEIK Research</span><span class="font-label-sm text-label-sm text-on-surface-variant">Debrecen Municipal Node</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Interactive Script for Tab/Filter Micro-interactions -->
+<script>
+    function switchTemporalScale(btn, scale) {
+      document.querySelectorAll('.time-filter-btn').forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+        b.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+      });
+      btn.classList.add('bg-primary-container', 'text-surface-container-lowest', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+    }
+    function toggleIntervention(checkboxId, counterId) {
+      const el = document.getElementById(checkboxId);
+      const isChecked = el.getAttribute('data-checked') === 'true';
+      el.setAttribute('data-checked', !isChecked);
+      if (!isChecked) {
+        el.innerHTML = '<span class="material-symbols-outlined text-[16px] text-surface-container-lowest">check</span>';
+        el.classList.replace('bg-surface-container-lowest', 'bg-primary-container');
+        el.classList.replace('border-outline-variant', 'border-primary-container');
+      } else {
+        el.innerHTML = '';
+        el.classList.replace('bg-primary-container', 'bg-surface-container-lowest');
+        el.classList.replace('border-primary-container', 'border-outline-variant');
+      }
+    }
+  </script>
+<!-- Top Breadcrumb & Station Select Toolbar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary-container transition-colors" href="#">Municipal Network</a>
+<span class="font-label-sm text-label-sm text-outline-variant">/</span>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary-container transition-colors" href="#">Belváros Déli Kapu</a>
+<span class="font-label-sm text-label-sm text-outline-variant">/</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Node DEB-KER11</span>
+</div>
+<!-- Right Actions & Switcher -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative inline-block">
+<select class="appearance-none bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2 pl-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer">
+<option selected="">Switch Station: Petőfi tér (DEB-KER11) ▼</option>
+<option>Nagyerdő Biosphere (DEB-ERD02)</option>
+<option>Kossuth tér Pedestrian (DEB-BEL01)</option>
+<option>BMW Science Park Core (DEB-IP04)</option>
+<option>Tócóskert Urban Spine (DEB-RES07)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 pointer-events-none text-[18px] text-outline">unfold_more</span>
+</div>
+<button class="inline-flex items-center gap-space-xs px-3 py-2 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3.5 py-2 bg-primary-container text-surface-container-lowest font-label-md text-label-md rounded-lg shadow-sm hover:bg-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">model_training</span>
+<span>Run Model v2.4</span>
+</button>
+</div>
+</div>
+<!-- Hero Station Status Banner -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-space-xl relative overflow-hidden">
+<!-- Ambient ecological status background accent -->
+<div class="absolute -right-20 -top-24 w-96 h-96 rounded-full bg-error/5 blur-3xl pointer-events-none"></div>
+<div class="absolute -right-10 -bottom-20 w-80 h-80 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-start justify-between gap-space-lg">
+<div class="space-y-space-sm max-w-4xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm tracking-wide">
+<span class="h-2 w-2 rounded-full bg-error animate-pulse"></span>
+            Emerging Green Zone • Category Alpha (Priority 1 Surveillance)
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+            ID: DEB-KER11
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            47.5218° N, 21.6251° E • Belváros Déli Kapu Hub
+          </span>
+</div>
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+            Petőfi tér — Intermodal Transit Terminal
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+            Bivariate anomaly detection flagged rapid environmental abatement combined with intense public transit intersection. Spatial convergence analysis active.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-xs pt-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>Sensor Standard: <strong>DEIK Optical v4.2</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">update</span>
+<span>Telemetry Pulse: <strong>30s Live Sync</strong> (Stream Buffer OK)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">warning_amber</span>
+<span>Policy Status: <strong>Gentrif. Watch Active</strong></span>
+</div>
+</div>
+</div>
+<!-- Quick Realtime Diagnostic Metric Widget -->
+<div class="xl:w-72 flex-shrink-0 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Station Vector</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed">Optimal Feed</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">99.8%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Uptime</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 99.8%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+<span>Latent Lag: <strong>112ms</strong></span>
+<span>Calib: <strong>4h ago</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Metric Cards Grid (6 Columns/Cards Bento) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-md mb-space-xl">
+<!-- Metric 1: PM2.5 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">PM2.5 Particles</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-[10px] font-bold">-32.4%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">38.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">µg/m³</span>
+</div>
+</div>
+<div class="mt-3">
+<!-- Mini Sparkline SVG (Decay trend) -->
+<div class="h-9 w-full flex items-end">
+<svg class="w-full h-8 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 30">
+<defs>
+<lineargradient id="pm25grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006c49" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#006c49" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<polygon fill="url(#pm25grad)" points="0,5 15,9 30,8 45,16 60,18 75,22 90,26 100,28 100,30 0,30"></polygon>
+<polyline fill="none" points="0,5 15,9 30,8 45,16 60,18 75,22 90,26 100,28" stroke="#006c49" stroke-linecap="round" stroke-width="2"></polyline>
+</svg>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label-sm text-on-surface-variant pt-1">
+<span>Base: 56.5 µg</span>
+<span class="text-error font-semibold">WHO: 15 µg</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: PM10 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">PM10 Coarse</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-[10px] font-bold">-26.8%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">49.1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">µg/m³</span>
+</div>
+</div>
+<div class="mt-3">
+<!-- Mini Sparkline SVG -->
+<div class="h-9 w-full flex items-end">
+<svg class="w-full h-8 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 30">
+<polyline fill="none" points="0,8 18,12 35,10 50,19 68,17 82,23 100,24" stroke="#006c49" stroke-linecap="round" stroke-width="2"></polyline>
+</svg>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label-sm text-on-surface-variant pt-1">
+<span>YoY Shift: -17.9µg</span>
+<span class="text-secondary font-semibold">Abating</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: NO2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Nitrogen NO₂</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[10px] font-bold">Near Cap</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">44.1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">µg/m³</span>
+</div>
+</div>
+<div class="mt-3">
+<!-- Progress gauge against EU limit 40 -->
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-error h-2 rounded-full" style="width: 88%"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label-sm text-on-surface-variant pt-2">
+<span>Railway track diesel</span>
+<span class="text-error font-semibold">EU: 40 µg</span>
+</div>
+</div>
+</div>
+<!-- Metric 4: Microclimate -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Microclimate</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">Tree Canopy</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">21.4</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">°C • 58%</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">park</span>
+<span>-1.2°C UHI Offset</span>
+</div>
+<div class="text-[10px] font-body-sm text-on-surface-variant pt-1 truncate">
+          Square revitalization buffer
+        </div>
+</div>
+</div>
+<!-- Metric 5: Transit Index -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Transit Reach</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">DKV Core</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-on-surface">96</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 100</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="text-[11px] font-semibold text-on-surface truncate">
+          Tram 1 &amp; 2 + 42 Bus Lines
+        </div>
+<div class="text-[10px] font-body-sm text-on-surface-variant pt-0.5">
+          687 daily transit movements
+        </div>
+</div>
+</div>
+<!-- Metric 6: Recovery Score -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Env Shift Score</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">Rank #2</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-numeral text-telemetry-numeral text-secondary font-bold">+32.4%</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 82%"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label-sm text-on-surface-variant pt-1.5">
+<span>Pace: Exceptional</span>
+<span class="text-secondary font-semibold">Top 5%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep Dive Analytics: Two-Column Bento Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- LEFT COLUMN (7 Cols): Multi-parameter Time Series & Diurnal Cycles -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Chart Card 1: 12-Month Multi-Pollutant Trend with Fleet Electrification Marker -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">insights</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Multi-Parameter Environmental Decay Curve</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">LOESS Non-linear Regression Analysis (2024–2025 Historical Rolling Baseline)</p>
+</div>
+<!-- Time Scale Selectors -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="time-filter-btn px-2.5 py-1 text-on-surface-variant rounded font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="switchTemporalScale(this, '30d')">30D</button>
+<button class="time-filter-btn px-2.5 py-1 text-on-surface-variant rounded font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="switchTemporalScale(this, '90d')">90D</button>
+<button class="time-filter-btn px-2.5 py-1 bg-primary-container text-surface-container-lowest font-label-sm text-label-sm rounded shadow-sm" onclick="switchTemporalScale(this, '12m')">12M</button>
+<button class="time-filter-btn px-2.5 py-1 text-on-surface-variant rounded font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="switchTemporalScale(this, 'all')">All</button>
+</div>
+</div>
+<!-- Legend and intervention pill -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm py-2 mb-2 bg-surface-container-low/50 px-3 rounded-xl">
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-1 rounded-full bg-secondary"></span>
+<span>PM2.5 Realtime</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-1 rounded-full bg-error"></span>
+<span>NO₂ Adjacency</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-outline-variant stroke-dasharray"></span>
+<span>Municipal Threshold</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 text-[11px] font-label-sm text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+<span>Sept 2024: DKV e-Bus Batch Deployed</span>
+</div>
+</div>
+<!-- Custom SVG Chart Canvas -->
+<div class="relative w-full h-72 my-2">
+<!-- Electrification Marker Callout Line (at 60% X axis) -->
+<div class="absolute left-[60%] top-0 bottom-6 w-px bg-secondary/50 border-dashed border-l border-secondary pointer-events-none flex flex-col items-center">
+<span class="bg-secondary-container text-on-secondary-container text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-widest -mt-2 shadow-xs whitespace-nowrap">Sept '24 Fleet Electrification</span>
+</div>
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 600 240">
+<!-- Background Grid lines -->
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="600" y1="40" y2="40"></line>
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="600" y1="90" y2="90"></line>
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="600" y1="140" y2="140"></line>
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="600" y1="190" y2="190"></line>
+<!-- WHO / Safety Baseline Guideline -->
+<line stroke="#c2c8c2" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="600" y1="170" y2="170"></line>
+<text fill="#727973" font-family="Inter" font-size="10" text-anchor="end" x="590" y="165">WHO Target Line (15 µg/m³)</text>
+<!-- PM2.5 Curve Area Fill -->
+<defs>
+<lineargradient id="chartGradientPM" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006c49" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#006c49" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M 20 65 Q 90 60 160 78 T 300 95 T 360 125 T 440 160 T 520 178 T 580 185 L 580 215 L 20 215 Z" fill="url(#chartGradientPM)"></path>
+<!-- PM2.5 Main Line -->
+<path d="M 20 65 Q 90 60 160 78 T 300 95 T 360 125 T 440 160 T 520 178 T 580 185" fill="none" stroke="#006c49" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- NO2 Curve Line (Sticky high because of railway station) -->
+<path d="M 20 85 Q 90 92 160 88 T 300 102 T 360 115 T 440 124 T 520 120 T 580 118" fill="none" stroke="#ba1a1a" stroke-dasharray="5 3" stroke-linecap="round" stroke-width="2"></path>
+<!-- Data Points -->
+<circle cx="20" cy="65" fill="#006c49" r="3.5"></circle>
+<circle cx="360" cy="125" fill="#6cf8bb" r="4.5" stroke="#006c49" stroke-width="2"></circle>
+<circle cx="580" cy="185" fill="#006c49" r="4.5"></circle>
+<circle cx="20" cy="85" fill="#ba1a1a" r="3.5"></circle>
+<circle cx="580" cy="118" fill="#ba1a1a" r="4"></circle>
+</svg>
+<!-- Bottom X-Axis Markers -->
+<div class="flex justify-between text-[11px] font-label-sm text-on-surface-variant pt-2 border-t border-surface-container">
+<span>Mar '24</span>
+<span>May '24</span>
+<span>Jul '24</span>
+<span>Sep '24 (Electrification)</span>
+<span>Nov '24</span>
+<span>Jan '25</span>
+<span>Mar '25 (Current)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Confirmed: 32.4% net abatement rate across rolling 365 days</span>
+</div>
+<span class="text-[11px] font-mono">p &lt; 0.001 (High Statistical Confidence)</span>
+</div>
+</div>
+<!-- Chart Card 2: 24-Hour Diurnal Pattern Grid -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">24-Hour Diurnal Commuter Pollution Cycle</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Station DEB-KER11 hourly curve vs. Debrecen Citywide Baseline</p>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="w-3 h-2 rounded bg-primary-container"></span>
+<span>Petőfi tér</span>
+</span>
+<span class="flex items-center gap-1 text-outline">
+<span class="w-3 h-2 rounded bg-surface-container-highest"></span>
+<span>City Median</span>
+</span>
+</div>
+</div>
+<!-- 24-Bar Comparative Distribution Visual -->
+<div class="w-full pt-4 pb-2">
+<div class="grid grid-cols-12 gap-1.5 sm:gap-2 items-end h-36">
+<!-- 00-02 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 25%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 30%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">02h</span>
+</div>
+<!-- 02-04 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 18%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 20%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">04h</span>
+</div>
+<!-- 04-06 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 30%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 44%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">06h</span>
+</div>
+<!-- 06-08 (RUSH PEAK) -->
+<div class="flex flex-col items-center gap-1 h-full justify-end bg-error/5 rounded-t-lg p-0.5">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 60%"></div>
+<div class="w-2.5 bg-error rounded-t-sm" style="height: 94%"></div>
+</div>
+<span class="text-[10px] font-mono font-bold text-error">08h</span>
+</div>
+<!-- 08-10 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 52%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 72%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">10h</span>
+</div>
+<!-- 10-12 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 40%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 48%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">12h</span>
+</div>
+<!-- 12-14 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 38%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 42%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">14h</span>
+</div>
+<!-- 14-16 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 55%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 68%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">16h</span>
+</div>
+<!-- 16-18 (EVENING PEAK) -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 65%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 82%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">18h</span>
+</div>
+<!-- 18-20 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 48%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 54%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">20h</span>
+</div>
+<!-- 20-22 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 34%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 38%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">22h</span>
+</div>
+<!-- 22-24 -->
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full flex gap-0.5 items-end justify-center h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 26%"></div>
+<div class="w-2.5 bg-primary-container rounded-t-sm" style="height: 28%"></div>
+</div>
+<span class="text-[10px] font-mono text-outline">24h</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm mt-3 flex items-start gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-error flex-shrink-0 mt-0.5">schedule</span>
+<span><strong>Transit Anomaly Spike:</strong> Concentrated 07:30–09:00 DKV morning transfer surge triggers a 1.8x NO₂ delta compared to suburban reference nodes. Evening dispersal is accelerated by microclimatic draft from adjacent parkland.</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (5 Cols): AI Interpretation & Policy Intelligence Dossier -->
+<div class="xl:col-span-5 flex flex-col gap-space-lg">
+<!-- Spatial Visualizer: Petőfi tér Hub Context -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm overflow-hidden flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container">satellite_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Terminal Micro-Zoning</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Orthophoto 2025</span>
+</div>
+<!-- Static Location / Imagery Component -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-space-sm" data-location="Petofi ter Debrecen Hungary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANEYDX9qJWwNe3ebH1tXa310rI8mnyvwvJ-VT2T-_-IsZi2lPCV1xkGLQcBFbPbvACXpQCS9IfPRs8ET9qm5Y7xxVoMLCftvQn9xclhN8o3cUfLckm20DYFNfiS29mg8OptoxFsQ_PKvjAXYvEZeJMWsckONtWoQiM7hgZ2mIX8yZYuw_sZcjukkeybOmdYRzFQVDozxp4oMD1JRs0orHQKjhF8zLrLMK0zr6h1IUFNBcP5sKUal11RQ'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<!-- Marker Pins Overlaid -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="relative flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-error"></span>
+</span>
+<span class="bg-primary-container text-surface-container-lowest font-label-sm text-[10px] px-2 py-0.5 rounded shadow mt-1 whitespace-nowrap">DEB-KER11 Node</span>
+</div>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-surface-container-lowest font-body-sm text-[11px]">
+<span>DKV Tram 1/2 Loop</span>
+<span>MÁV Railway Concourse Adjacent</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Dual spatial pressures: intense vehicular and passenger turnover at the concourse counteracted by 2.4 hectares of newly mature perimeter greenery.
+        </p>
+</div>
+<!-- AI Interpretation Card (Executive Forest Framing) -->
+<div class="bg-primary-container text-surface-container-lowest rounded-2xl p-space-lg shadow-md relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container-lowest/10">
+<div class="flex items-center gap-space-xs text-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight">DEIK.AI Model Synthesis</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-secondary-fixed/20 text-secondary-fixed">Bivariate Confidence: 94.2%</span>
+</div>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed mb-space-md">
+            Station <strong>DEB-KER11</strong> exhibits classic characteristics of an <strong>Emerging Green Zone</strong>. The sharp divergence between rapid air quality improvement (<span class="text-secondary-fixed font-semibold">+32.4%</span>) and persistent high baseline particulate load indicates localized mitigation impact (canopy growth, fleet electrification) rather than structural industrial relocation. Combined with peak transit accessibility (<strong>96/100</strong>), this corridor is under heightened spatial development pressure.
+          </p>
+<!-- Guardrail Quote Block -->
+<div class="bg-primary/60 p-space-sm rounded-xl mb-space-md flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed flex-shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-surface-container-low italic">
+              "Methodological guardrail: This is a systemic indicator for municipal proactive planning; it does not imply immediate socio-economic displacement."
+            </p>
+</div>
+<!-- Municipal Policy Checklist -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed block mb-1">Recommended Municipal Interventions</span>
+<!-- Item 1 -->
+<div class="flex items-start gap-space-sm p-2 rounded-lg bg-surface-container-lowest/5 hover:bg-surface-container-lowest/10 transition-colors cursor-pointer" onclick="toggleIntervention('chk1')">
+<div class="w-4 h-4 mt-0.5 rounded flex items-center justify-center bg-secondary text-primary cursor-pointer" data-checked="true" id="chk1">
+<span class="material-symbols-outlined text-[14px] text-surface-container-lowest">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-surface-container-lowest font-medium">Deploy Green Public Housing Covenants</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">Protect rent brackets within 500m radius of Petőfi concourse</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-space-sm p-2 rounded-lg bg-surface-container-lowest/5 hover:bg-surface-container-lowest/10 transition-colors cursor-pointer" onclick="toggleIntervention('chk2')">
+<div class="w-4 h-4 mt-0.5 rounded flex items-center justify-center bg-surface-container-lowest border border-outline-variant cursor-pointer" data-checked="false" id="chk2"></div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-surface-container-lowest font-medium">Buffer Zone Tree Infill along Railway Track</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">Target NO₂ barrier absorption for eastern MÁV terminal tracks</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-space-sm p-2 rounded-lg bg-surface-container-lowest/5 hover:bg-surface-container-lowest/10 transition-colors cursor-pointer" onclick="toggleIntervention('chk3')">
+<div class="w-4 h-4 mt-0.5 rounded flex items-center justify-center bg-secondary text-primary cursor-pointer" data-checked="true" id="chk3">
+<span class="material-symbols-outlined text-[14px] text-surface-container-lowest">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-surface-container-lowest font-medium">Continuous Micro-sensor Densification</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">Install secondary sub-nodes at Erzsébet utca bus turnaround</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm border-t border-surface-container-lowest/10 flex items-center justify-between text-primary-fixed-dim font-label-sm text-label-sm">
+<span>Target Window: Q2 2026 Municipal Session</span>
+<button class="text-secondary-fixed hover:underline flex items-center gap-0.5 font-bold">
+<span>Issue Policy Brief</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Benchmarking & Sensor Health Section -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Benchmark Multi-Axis Comparison Bar Section (8 Cols) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Municipal Baseline Benchmark</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparative variance: Petőfi tér vs. City Median vs. Pristine Forest Baseline (Nagyerdő)</p>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> DEB-KER11</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span> City Median</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Nagyerdő (Pristine)</span>
+</div>
+</div>
+<!-- Comparison Metrics Stack -->
+<div class="space-y-space-md pt-2">
+<!-- Metric Row 1: PM2.5 Exposure -->
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span class="font-semibold">PM2.5 Exposure Index (Lower is Better)</span>
+<span>DEB-KER11: <strong>38.2 µg</strong> | Median: 42.0 µg | Pristine: 9.8 µg</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 16%" title="Nagyerdő"></div>
+<div class="h-full bg-primary-container" style="width: 48%" title="Petőfi tér"></div>
+<div class="h-full bg-outline-variant" style="width: 12%" title="City Median"></div>
+</div>
+</div>
+<!-- Metric Row 2: NO2 Traffic Influx -->
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span class="font-semibold">NO₂ Traffic Influx (Lower is Better)</span>
+<span class="text-error">DEB-KER11: <strong>44.1 µg (Elevated)</strong> | Median: 29.5 µg | Pristine: 8.1 µg</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 14%"></div>
+<div class="h-full bg-outline-variant" style="width: 36%"></div>
+<div class="h-full bg-error" style="width: 24%"></div>
+</div>
+</div>
+<!-- Metric Row 3: Transit Connectivity Index -->
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span class="font-semibold">Transit Connectivity Index (Higher is Better)</span>
+<span>DEB-KER11: <strong>96 / 100</strong> | Median: 48 / 100 | Pristine: 12 / 100</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex">
+<div class="h-full bg-primary-container" style="width: 96%"></div>
+</div>
+</div>
+<!-- Metric Row 4: Canopy Coverage & Green Space Index -->
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span class="font-semibold">Canopy Coverage &amp; Permeable Surface (%)</span>
+<span>DEB-KER11: <strong>31%</strong> | Median: 22% | Pristine: 94%</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex">
+<div class="h-full bg-primary-container" style="width: 31%"></div>
+<div class="h-full bg-surface-container-high" style="width: 69%"></div>
+</div>
+</div>
+<!-- Metric Row 5: Population & Pedestrian Density (Persons/ha) -->
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span class="font-semibold">Pedestrian Throughput Density (Peak/hr)</span>
+<span>DEB-KER11: <strong>3,420 p/h</strong> | Median: 710 p/h | Pristine: 45 p/h</span>
+</div>
+<div class="relative w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex">
+<div class="h-full bg-primary-container" style="width: 88%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sensor Hardware & Cryptographic Telemetry Card (4 Cols) -->
+<div class="xl:col-span-4 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sensor Hardware Node</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[16px]">sensors</span> Online
+          </span>
+</div>
+<div class="space-y-space-sm my-space-md">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pb-1 border-b border-surface-container">
+<span>Hardware Model</span>
+<span class="font-mono font-medium text-on-surface">Green Sentinel GS-400Dual</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pb-1 border-b border-surface-container">
+<span>Optical Chamber</span>
+<span class="font-medium text-on-surface">Dual-Laser Mie Scattering</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pb-1 border-b border-surface-container">
+<span>Power Source</span>
+<span class="font-medium text-on-surface">DKV Overhead DC + LiFePO4</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pb-1 border-b border-surface-container">
+<span>Firmware Stack</span>
+<span class="font-mono text-on-surface">DEIK-Micro-v4.19-p7</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Last Field Audit</span>
+<span class="font-medium text-on-surface">14 Feb 2025 (Calibrated)</span>
+</div>
+</div>
+</div>
+<!-- Verification Badge -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between mt-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Data Hash Verified</span>
+<span class="text-[10px] font-mono text-on-surface-variant">SHA256: 9e7c...f301</span>
+</div>
+</div>
+<button class="px-2.5 py-1 bg-surface-container-lowest text-on-surface font-label-sm text-label-sm rounded shadow-xs hover:bg-surface-container-high transition-colors">
+          Audit
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Regulatory & Citation Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">school</span>
+        University of Debrecen • DEIK.AI 2026
+      </span>
+<span>•</span>
+<span>Debrecen Smart City Telemetry Consortium</span>
+</div>
+<div class="flex items-center gap-space-md text-[11px] font-label-sm">
+<span class="text-secondary font-mono">STATION-LATENCY: 42ms</span>
+<span>EU Ambient Air Quality Directive 2008/50/EC Compliant</span>
+</div>
+</div>
+</div></main></div></body></html>
