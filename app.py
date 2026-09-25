@@ -1,9 +1,14 @@
 import logging
+import socket
+import threading
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_folium import st_folium
 
 from src.config import (
@@ -13,6 +18,7 @@ from src.config import (
     RISK_BAND_COLORS,
     RISK_CATEGORY_COLORS,
 )
+from src.frontend.generate_site import build as build_stitch_site
 from src.loaders.biodiversity_loader import BiodiversityLoader
 from src.loaders.dkv_loader import DKVLoader
 from src.loaders.green_sentinel_loader import GreenSentinelLoader
@@ -37,8 +43,60 @@ st.set_page_config(
     page_title="GreenSense Debrecen — Environmental Intelligence",
     page_icon="🌳",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
+
+
+def _find_available_port(start: int = 8899, attempts: int = 200) -> int:
+    for port in range(start, start + attempts):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            if sock.connect_ex(("127.0.0.1", port)) != 0:
+                return port
+    raise RuntimeError("Could not find a free local port for Stitch frontend server.")
+
+
+class _QuietStaticHandler(SimpleHTTPRequestHandler):
+    def log_message(self, format: str, *args) -> None:  # noqa: A003
+        return
+
+
+@st.cache_resource
+def _serve_stitch_frontend() -> tuple[str, int]:
+    build_stitch_site()
+    site_dir = OUTPUT_DIR / "frontend_site"
+    if not site_dir.exists():
+        raise RuntimeError(f"Expected generated site directory at {site_dir}")
+
+    entry = "loading.html" if (site_dir / "loading.html").exists() else "index.html"
+    port = _find_available_port()
+    handler = partial(_QuietStaticHandler, directory=str(site_dir))
+    server = ThreadingHTTPServer(("127.0.0.1", port), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    return entry, port
+
+
+def _render_stitch_default() -> None:
+    entry, port = _serve_stitch_frontend()
+    st.markdown(
+        """
+        <style>
+          [data-testid="stHeader"] { background: transparent; }
+          [data-testid="stToolbar"] { right: 0.75rem; }
+          .block-container { padding-top: 0.25rem; padding-bottom: 0; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    components.iframe(f"http://127.0.0.1:{port}/{entry}", height=2200, scrolling=True)
+    st.stop()
+
+
+try:
+    _render_stitch_default()
+except Exception as stitch_error:
+    st.warning(f"Stitch frontend unavailable, falling back to legacy Streamlit view. ({stitch_error})")
 
 CSS = """
 <style>
