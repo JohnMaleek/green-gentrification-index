@@ -63,7 +63,20 @@ class _QuietStaticHandler(SimpleHTTPRequestHandler):
 
 @st.cache_resource
 def _serve_stitch_frontend() -> tuple[str, int]:
-    build_stitch_site()
+    required = [
+        OUTPUT_DIR / "processed_data" / "clustering_results.csv",
+        OUTPUT_DIR / "processed_data" / "environmental_justice_scores.csv",
+        OUTPUT_DIR / "processed_data" / "historical_gentrification.csv",
+        OUTPUT_DIR / "processed_data" / "data_quality_report.json",
+    ]
+    missing = [p for p in required if not p.exists()]
+    if missing:
+        from run_pipeline import main as run_full_pipeline
+
+        run_full_pipeline()
+    else:
+        build_stitch_site()
+
     site_dir = OUTPUT_DIR / "frontend_site"
     if not site_dir.exists():
         raise RuntimeError(f"Expected generated site directory at {site_dir}")
