@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Initializing — GreenSense Debrecen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              950: '#06160e',
+              900: '#0a2216',
+              800: '#0f2d1f',
+              700: '#16432f',
+              600: '#1f5b40',
+              500: '#10b981',
+              400: '#34d399',
+              300: '#6ee7b7',
+              100: '#d1fae5',
+              50: '#f0fdf4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes pulseRing {
+      0% { transform: scale(0.96); opacity: 0.8; }
+      50% { transform: scale(1.04); opacity: 0.3; }
+      100% { transform: scale(0.96); opacity: 0.8; }
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 12s linear infinite;
+    }
+    .animate-spin-reverse {
+      animation: spinReverse 16s linear infinite;
+    }
+    .animate-pulse-ring {
+      animation: pulseRing 3.5s ease-in-out infinite;
+    }
+    .shimmer-bar {
+      background: linear-gradient(90deg, rgba(16,185,129,0.2) 0%, rgba(52,211,153,0.9) 50%, rgba(16,185,129,0.2) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite linear;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-spin-slow, .animate-spin-reverse, .animate-pulse-ring, .shimmer-bar {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#071911] text-emerald-50 min-h-screen flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black overflow-hidden relative">
+
+  <!-- Ambient Microclimate Grid & Radial Glow Background -->
+  <div class="absolute inset-0 pointer-events-none opacity-25" style="background-image: radial-gradient(#10b981 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] bg-emerald-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <!-- Top Metadata Navigation Bar -->
+  <header class="relative z-10 w-full px-8 py-6 flex items-center justify-between border-b border-emerald-900/40 backdrop-blur-md bg-brand-950/40">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center p-1.5 shadow-inner shadow-emerald-500/20">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1XipiQssWKdBBY7s8ZO2Wv5W44JvboHIoq7t1wIhK9hI2aTEoN-R9NoW1GUf5AtEHR3hgQlFfP8YyyGItNBWxg_F4b1yNWfRbs0EJsO8RPycUHgy11-A-7wsM47XV-0YFPCi_0O5mf4FVQktqaQOjP7SK9aiStOlT96pd5lRzs12i6oMFD5JhE6ii4HCxCeoDA4trYWxoSDxzat7wCaEw-6oa9ylzbOTGhBoKLbABRzugwDtuIdar0MB3ar" alt="GreenSense Logo" class="w-full h-full object-contain filter drop-shadow">
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-base font-bold tracking-tight text-white">GreenSense</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-mono font-medium border border-emerald-500/30">v2.8.4</span>
+        </div>
+        <p class="text-xs text-emerald-400/70 font-medium">Debrecen Urban Environmental Intelligence Platform</p>
+      </div>
+    </div>
+
+    <!-- Official Civic Competition Badge -->
+    <div class="flex items-center gap-4 text-xs font-mono text-emerald-300/80">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-emerald-950/60 border border-emerald-800/40">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>DEIK.AI 2026 CATEGORY B</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-2 text-emerald-400/60">
+        <span>HAJDÚ-BIHAR AIRSHED</span>
+        <span>•</span>
+        <span>MUNICIPAL CONSORTIUM</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Central Loading Stage with Debrecen Coat of Arms Centerpiece -->
+  <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-4xl mx-auto w-full text-center">
+    
+    <!-- Circular Emblem Loader Container -->
+    <div class="relative w-56 h-56 sm:w-64 sm:h-64 mb-8 flex items-center justify-center">
+      
+      <!-- Ambient Outer Pulse Glow -->
+      <div class="absolute inset-0 rounded-full border border-emerald-500/20 animate-pulse-ring"></div>
+      
+      <!-- Outer Orbiting Compass & Telemetry Ring -->
+      <svg class="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 256 256" fill="none">
+        <circle cx="128" cy="128" r="124" stroke="#10b981" stroke-width="1.5" stroke-dasharray="8 8" stroke-opacity="0.35"/>
+        <circle cx="128" cy="128" r="124" stroke="#34d399" stroke-width="2.5" stroke-dasharray="32 160" stroke-linecap="round"/>
+        <circle cx="128" cy="4" r="3" fill="#34d399" class="filter drop-shadow-[0_0_6px_#34d399]"/>
+        <circle cx="252" cy="128" r="2.5" fill="#10b981"/>
+        <circle cx="128" cy="252" r="2.5" fill="#10b981"/>
+        <circle cx="4" cy="128" r="2.5" fill="#10b981"/>
+      </svg>
+
+      <!-- Counter-rotating Secondary Instrument Ring -->
+      <svg class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] animate-spin-reverse" viewBox="0 0 240 240" fill="none">
+        <circle cx="120" cy="120" r="114" stroke="#059669" stroke-width="1.5" stroke-dasharray="4 12" stroke-opacity="0.4"/>
+        <circle cx="120" cy="120" r="114" stroke="#6ee7b7" stroke-width="2" stroke-dasharray="20 180" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Glassmorphic Solid Circle for Debrecen Coat of Arms -->
+      <div class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-gradient-to-b from-[#0e3524] via-[#09261a] to-[#061910] border-2 border-emerald-400/40 p-4 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(16,185,129,0.3)] backdrop-blur-xl group">
+        
+        <!-- Subtle Interior Inset Border -->
+        <div class="absolute inset-1 rounded-full border border-emerald-500/20 pointer-events-none"></div>
+        
+        <!-- Circular Debrecen Coat of Arms Asset -->
+        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex items-center justify-center p-1 bg-white/5 border border-emerald-400/25 shadow-inner">
+          <img 
+            src="https://lh3.googleusercontent.com/aida/AEtjO1VgkTbHsmKvl3h0J6y2XlUhghLDpBZdZRr5fWtyHvaER-H6ChFDxdumwnLDMNStM_SoJybJmO6R0WF-vjIHNv4056U6YpH6GwX3plB-C7NJWz0bdZIf23oEOzYDQ7EumIKANqPlN6oyGmD8lYpS4N2hX_8efSMQU00pAuXtpcanWV7dS7g_A-eRlq6at5tzEyJzNBFTndBonCTIWWnGkFeyS5KqKm2p4e1jCuKqTckZw0UQ9t0NuDo-IXnB" 
+            alt="Debrecen City Coat of Arms (Civic Seal)" 
+            class="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] transform hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- City Sub-label in Circle Badge -->
+        <div class="mt-1.5 flex items-center gap-1.5">
+          <span class="text-[10px] sm:text-[11px] font-mono tracking-widest text-emerald-300 font-semibold uppercase">DEBRECEN</span>
+          <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+          <span class="text-[9px] font-mono text-emerald-400/80">CIVITAS</span>
+        </div>
+      </div>
+
+      <!-- Live GPS Coordinate Badges floating around loader ring -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-emerald-950/90 border border-emerald-500/40 text-[10px] font-mono text-emerald-300 whitespace-nowrap shadow-lg">
+        47.5316° N, 21.6273° E
+      </div>
+    </div>
+
+    <!-- Initialization Titles & Status Feedback -->
+    <div class="space-y-2 mb-6 max-w-lg">
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        Initializing Urban Intelligence Grid
+      </h1>
+      <p class="text-sm text-emerald-300/80 font-normal leading-relaxed">
+        Connecting Debrecen <span class="text-emerald-300 font-semibold">Green Sentinel</span> sensor telemetry with <span class="text-emerald-300 font-semibold">DKV transit matrices</span>.
+      </p>
+    </div>
+
+    <!-- Progress Bar & Percentage Monitor -->
+    <div class="w-full max-w-md bg-emerald-950/60 rounded-xl p-4 border border-emerald-900/60 shadow-xl backdrop-blur-sm mb-6">
+      <div class="flex items-center justify-between text-xs font-mono mb-2">
+        <span id="pipeline-task" class="text-emerald-300 font-medium flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 animate-spin text-emerald-400" viewBox="0 0 24 24" fill="none">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Syncing 16 Green Sentinel IoT Nodes...
+        </span>
+        <span id="percentage-label" class="text-emerald-400 font-bold">78%</span>
+      </div>
+      
+      <!-- Progress Bar Track -->
+      <div class="w-full h-2 rounded-full bg-emerald-950 border border-emerald-800/50 overflow-hidden relative">
+        <div id="progress-fill" class="h-full rounded-full shimmer-bar transition-all duration-300 ease-out" style="width: 78%;"></div>
+      </div>
+
+      <!-- Quick Step Sequence Indicator -->
+      <div class="grid grid-cols-4 gap-2 mt-3 pt-3 border-t border-emerald-900/40 text-[10px] font-mono text-emerald-400/70">
+        <div class="flex items-center gap-1 text-emerald-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 16 Nodes
+        </div>
+        <div class="flex items-center gap-1 text-emerald-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 687 Stops
+        </div>
+        <div class="flex items-center gap-1 text-emerald-400 font-semibold animate-pulse">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span> LOESS Fit
+        </div>
+        <div class="flex items-center gap-1 opacity-40">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Complete
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Telemetry Terminal Stream (Simulated Civic Bus) -->
+    <div class="w-full max-w-lg bg-black/60 rounded-lg border border-emerald-900/50 p-3 text-left font-mono text-xs shadow-inner">
+      <div class="flex items-center justify-between text-[10px] text-emerald-400/60 pb-1.5 border-b border-emerald-900/30 mb-2">
+        <span>DEIK.AI DATASTREAM (DAEMON #04)</span>
+        <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> LIVE 30s SYNC</span>
+      </div>
+      <div class="space-y-1 text-emerald-400/80 text-[11px] leading-relaxed">
+        <div class="flex items-start gap-2">
+          <span class="text-emerald-500 select-none">&gt;</span>
+          <span>[04:00:10.112] INGEST: DEB-KER11 Petőfi tér PM2.5 delta -32.4% valid</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-emerald-500 select-none">&gt;</span>
+          <span>[04:00:11.402] KRIGING: Hajdú-Bihar 250m mesh spatial convergence 98.1%</span>
+        </div>
+        <div class="flex items-start gap-2 text-emerald-300 font-medium">
+          <span class="text-emerald-400 select-none">&gt;</span>
+          <span>[04:00:12.890] DKV MATRIX: Line 1 &amp; 2 headway delay matrix synced (687 nodes)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manual Action Links to Other Modules -->
+    <div class="mt-8 flex items-center gap-4 text-xs font-medium">
+      <a href="#" class="px-4 py-2 rounded-lg bg-emerald-600/90 hover:bg-emerald-500 text-brand-950 font-bold transition-all shadow-md shadow-emerald-500/20 flex items-center gap-2">
+        <span>Proceed to Executive Overview</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="#" class="px-4 py-2 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-800/40 text-emerald-300 transition-colors">
+        Direct Risk Map View
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Civic Environmental Footer -->
+  <footer class="relative z-10 w-full px-8 py-4 border-t border-emerald-900/40 bg-brand-950/60 text-xs font-mono text-emerald-400/60 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span>Debrecen City Telemetry Network • University of Debrecen (DEIK.AI)</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span>LATENCY: 42ms</span>
+      <span>•</span>
+      <span>EU AIR QUALITY DIRECTIVE 2008/50/EC</span>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle, progressive percentage ticker for civic intelligence feedback
+    document.addEventListener('DOMContentLoaded', () => {
+      const fill = document.getElementById('progress-fill');
+      const label = document.getElementById('percentage-label');
+      const task = document.getElementById('pipeline-task');
+
+      const steps = [
+        { pct: 82, text: 'Calibrating National Reference Station OLM Delta...' },
+        { pct: 89, text: 'Overlaying DKV Intermodal Frequency Density...' },
+        { pct: 95, text: 'Computing Bivariate Microclimate Risk Matrix...' },
+        { pct: 100, text: 'Telemetry Pipeline Ready. Launching Intelligence Suite.' }
+      ];
+
+      let currentStep = 0;
+      const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+          const s = steps[currentStep];
+          fill.style.width = s.pct + '%';
+          label.textContent = s.pct + '%';
+          task.innerHTML = `
+            <svg class="w-3.5 h-3.5 animate-spin text-emerald-400 inline-block mr-1" viewBox="0 0 24 24" fill="none">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            ${s.text}
+          `;
+          currentStep++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1400);
+    });
+  </script>
+</body>
+</html>
